@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+      #cont-search-location {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      #btn-choose-location {
+        border-color: white;
+        width: 600px;
+        background-color: #247BA0;
+        font-family: 'Forum';
+      }
+      #btn-login-home {
+        border-color: #247BA0;
+        color: #247BA0;
+        position: absolute;
+        font-family: 'Forum';
+        transform: translate(-50%, -50%);
+        margin-left: 50%;
+        margin-top: 3%;
+        background-color: transparent;
+        width: 400px;
+      }
+
+      #baton-rouge {
+        margin-top: 1%;
+      }
+      .horizontal-center {
+        margin-left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+    </style>
+  </head>
+  <body>
+    <div>
+      <h2 align="center"> Where In Our City </h2>
+    </div>
+    <div id="cont-search-location">
+      <button type="button" id="btn-choose-location" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+        Choose a location
+      </button>
+      <p style="margin-top: 1%; font-size: 20px" align="center">or</p>
+      <button id="btn-login-home" class="btn btn-primary btn-lg">Login</button>
+    </div>
+
+
+
+      <!-- Modal -->
+      <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-body">
+              <a href="cityhome.html"><button id="baton-rouge" class="btn btn-primary horizontal-center">Baton Rouge</button></a>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+  </body>
+</html>
