@@ -29,20 +29,11 @@
         background-color: transparent;
         width: 400px;
       }
-
-      #baton-rouge {
-        margin-top: 1%;
-      }
-      .horizontal-center {
-        margin-left: 50%;
-        transform: translate(-50%, -50%);
-      }
-
     </style>
   </head>
   <body>
-    <div>
-      <h2 align="center"> Where In Our City </h2>
+    <div style="margin-left:50%; transform: translateX(-50%); position: absolute;">
+      <img src="images/wiocLogo.png" style="width: 200px; height: 150px;">
     </div>
     <div id="cont-search-location">
       <button type="button" id="btn-choose-location" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
@@ -61,10 +52,7 @@
           <!-- Modal content-->
           <div class="modal-content">
             <div class="modal-body">
-              <a href="cityhome.html"><button id="baton-rouge" class="btn btn-primary horizontal-center">Baton Rouge</button></a>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <a href="cityhome.html"><button class="btn btn-primary horizontal-center brBtn">Baton Rouge</button></a>
             </div>
           </div>
 

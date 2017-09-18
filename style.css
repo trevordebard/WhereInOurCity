@@ -1,0 +1,9 @@
+.horizontal-center {
+  margin-left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.brBtn {
+  margin-top: 1%;
+}
