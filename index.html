@@ -36,7 +36,7 @@
         Choose a location
       </button>
       <p style="margin-top: 1%; font-size: 20px" align="center">or</p>
-      <button id="btn-login-home" class="btn btn-primary btn-lg">Login / Sign Up</button>
+      <button id="btn-login-home" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#login-modal">Login / Sign Up</button>
     </div>
 
     <div class="modal fade" id="myModal" role="dialog">
@@ -48,8 +48,22 @@
         </div>
       </div>
     </div>
-    <h3 style="margin-left: 50%; transform: translateX(-50%);">Our mission</h3>
-    
 
+    <div class="modal fade" id="login-modal" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <form>
+              <span>Username: <input type="text"></span><br>
+              <span>Password: <input type="password"></span><br>
+              <span><button type="Submit" class="btn">Login</button></span>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <h3 style="margin-left: 50%; transform: translateX(-50%);">Our mission</h3>
   </body>
 </html>
