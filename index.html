@@ -6,56 +6,106 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style>
-      #btn-choose-location {
+    #btn-choose-location {
         border-color: white;
         width: 600px;
         background-color: #247BA0;
-        font-family: 'Forum';
+        font-family: helvetica, sans-serif;
         margin-left:50%;
         transform: translateX(-50%);
       }
-      #btn-login-home {
-        border-color: #247BA0;
-        color: #247BA0;
-        font-family: 'Forum';
-        transform: translate(-50%, -50%);
-        margin-left: 50%;
-        margin-top: 3%;
-        background-color: transparent;
-        width: 400px;
-      }
+    .nav a {
+      color: black;
+      font-size: 15px;
+      font-weight: bold;
+      padding: 15px 10px;
+      font-family: helvetica, sans-serif;
+      margin-left: 1px;
+      text-decoration: none;
+    }
+    .underlineAnimate{
+      display: inline;
+      position: relative;
+      overflow: hidden;
+      top: 6px;
+    }
+    .underlineAnimate:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 100%;
+      bottom: 5px;
+      height: 4px;
+      transition-property: top bottom;
+      transition-duration: 0.4s;
+      transition-timing-function: ease-out;
+      background: #247BA0;
+    }
+    .underlineAnimate:hover:after,
+    .underlineAnimate:focus:after,
+    .underlineAnimate:active:after {
+      right: 0;
+    }
+    .nav li {
+      display: inline;
+    }
+    .space{
+      margin-top:380px;
+    }
+    .textCentered{
+      text-align:center;
+    }
+    hr{
+      width:75%;
+      border-color:#247BA0;
+    }
+    .ourMissionText{
+      margin:auto;
+      max-width:75%;
+    }
+    #ourMissionHeader{
+        text-decoration: none;
+        color:#247BA0;
+    }
     </style>
   </head>
   <body>
+    <div class="nav">
+        <ul class="pull-right">
+          <li><a href="#" id="signUpBtn" class="underlineAnimate">Sign Up</a></li>
+          <li><a href="#" id="loginBtn" class="underlineAnimate" data-toggle="modal" data-target="#login-modal">Log In</a></li>
+          <li><a href="#ourMissionHeader" id="ourMissionBtn" class="underlineAnimate">Our Mission</a></li>
+  		  <li><a href="#" id="contactUsBtn" class="underlineAnimate" data-toggle="modal" data-target="#contact-modal">Contact Us</a></li>
+        </ul>
+    </div>
+
     <div id="logo-header" align="center">
       <img src="images/wiocLogo.png" style="width: 200px; height: 150px;">
     </div>
 
     <div id="cont-search-location">
       <button type="button" id="btn-choose-location" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-        Choose a location
+        Choose a Location
       </button>
-      <p style="margin-top: 1%; font-size: 20px" align="center">or</p>
-      <button id="btn-login-home" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#login-modal">Login / Sign Up</button>
     </div>
 
     <div class="modal fade" id="myModal" role="dialog">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-body">
-            <a href="cityhome.html"><button class="btn btn-primary horizontal-center brBtn">Baton Rouge</button></a>
+            <a href="cityTest.html"><button class="btn btn-primary horizontal-center brBtn">Baton Rouge</button></a>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="modal fade" id="login-modal" role="dialog">
+		<div class="modal fade" id="login-modal" role="dialog">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-body">
             <form>
               <span><input type="text" class="form-control" placeholder="Username"></span><br>
-              <span><input type="password" class="form-control" placeholder="password"></span><br>
+              <span><input type="password" class="form-control" placeholder="Password"></span><br>
               <button type="Submit" class="btn" style="margin-left: 50%; transform: translateX(-50%);">Login</button>
             </form>
           </div>
@@ -63,7 +113,31 @@
       </div>
     </div>
 
+    <div class="modal fade" id="contact-modal" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <form>
+              <span><input type="text" class="form-control" placeholder="Email"></span><br>
+              <span><input type="text" class="form-control" placeholder="Username"></span><br>
+              <span><input type="text" class="form-control" placeholder="Message"></span><br>
+              <button type="Submit" class="btn" style="margin-left: 50%; transform: translateX(-50%);">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <h3 style="margin-left: 50%; transform: translateX(-50%);">Our mission</h3>
+    <div id="ourMissionText">
+      <hr class="space">
+      <h2 class="textCentered"><a id="ourMissionHeader">Our Mission</a></h2>
+      <br>
+      <p class="ourMissionText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed scelerisque, metus id porta pellentesque, mauris nisl viverra orci, at vulputate quam est ut leo. Duis eros nibh, faucibus sed feugiat nec, fermentum eget massa. Nullam convallis, ante nec consequat ultricies, nulla lectus tristique elit, vulputate varius arcu risus nec libero. Nulla maximus aliquet dolor tempor posuere. Proin consectetur et arcu a laoreet. Sed eget ultricies ipsum. Cras ac rutrum velit, ut posuere nunc. Aliquam euismod urna at lacus vulputate volutpat. Donec feugiat velit vitae dolor venenatis, vitae pretium neque tempus. Phasellus in mauris at odio consectetur mattis eget vitae lectus. Pellentesque porttitor massa a tempor ultricies. Duis in nibh ac lorem pretium fringilla id at nulla. Sed egestas purus in nibh convallis, vitae commodo ligula placerat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce ullamcorper, lacus nec sodales euismod, sem dui bibendum sem, eget hendrerit nisi nulla non neque. Praesent non velit scelerisque lectus lobortis rutrum.
+      Fusce vitae tincidunt eros. Vivamus ornare sodales diam eu suscipit. Donec eu magna pellentesque ipsum rhoncus viverra quis id magna. Curabitur nec urna tortor. Etiam ullamcorper vehicula orci, et efficitur purus dapibus nec. In non est eros. Quisque volutpat odio sit amet mi interdum, in fermentum urna consequat.</p>
+      <br>
+      <p class="ourMissionText">Nunc pharetra, ex non maximus ultrices, metus erat sollicitudin orci, in scelerisque arcu lacus elementum mauris. Praesent eleifend consequat nisl, quis convallis eros dapibus ut. Fusce quam erat, maximus eget blandit id, posuere vitae ipsum. Vestibulum pharetra mauris vel mauris tincidunt suscipit. Aliquam consequat, diam eu feugiat volutpat, lorem felis vestibulum ex, nec porta dui dolor sit amet augue. Pellentesque sit amet rhoncus leo. Vestibulum tempor vestibulum malesuada. Morbi semper accumsan justo, eu volutpat nisl volutpat eu.
+      In hac habitasse platea dictumst. Nam et fermentum dui. Ut nec pretium leo. Fusce ex magna, facilisis eget purus eu, rhoncus venenatis velit. In purus augue, lacinia vel metus id, consequat congue lectus. Etiam hendrerit sed ligula id ullamcorper. Donec interdum iaculis orci, sit amet pharetra enim dapibus ut. Donec luctus tellus nulla, ac maximus tellus ullamcorper non. Phasellus vitae nunc et lacus feugiat placerat. Curabitur blandit fringilla luctus. Sed egestas lectus non orci cursus, a dictum nibh imperdiet. Vestibulum rutrum vestibulum vehicula.
+      Suspendisse scelerisque est non elit pretium malesuada. Nulla orci leo, sagittis eu congue et, scelerisque in sem. Quisque posuere urna non arcu vulputate varius. In cursus nibh id leo auctor scelerisque. Phasellus ut ullamcorper est. Aliquam eget nisi id metus efficitur tincidunt. Duis ante nulla, consequat a arcu id, vestibulum semper nisi. Mauris diam nisl, fermentum vel fringilla eu, finibus id tellus. Duis malesuada dui ut dictum venenatis. Cras ultrices et mauris sit amet posuere. </p>
+    </div>
   </body>
 </html>
