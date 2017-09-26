@@ -50,7 +50,7 @@
       display: inline;
     }
     .space{
-      margin-top:380px;
+      margin-top: 35%;
     }
     .textCentered{
       text-align:center;
@@ -80,7 +80,7 @@
     </div>
 
     <div id="logo-header" align="center">
-      <img src="images/wiocLogo.png" style="width: 200px; height: 150px;">
+      <img src="images/wiocLogo.png" style="width: 200px; height: 150px; margin-top: 5%;">
     </div>
 
     <div id="cont-search-location">
@@ -139,5 +139,15 @@
       In hac habitasse platea dictumst. Nam et fermentum dui. Ut nec pretium leo. Fusce ex magna, facilisis eget purus eu, rhoncus venenatis velit. In purus augue, lacinia vel metus id, consequat congue lectus. Etiam hendrerit sed ligula id ullamcorper. Donec interdum iaculis orci, sit amet pharetra enim dapibus ut. Donec luctus tellus nulla, ac maximus tellus ullamcorper non. Phasellus vitae nunc et lacus feugiat placerat. Curabitur blandit fringilla luctus. Sed egestas lectus non orci cursus, a dictum nibh imperdiet. Vestibulum rutrum vestibulum vehicula.
       Suspendisse scelerisque est non elit pretium malesuada. Nulla orci leo, sagittis eu congue et, scelerisque in sem. Quisque posuere urna non arcu vulputate varius. In cursus nibh id leo auctor scelerisque. Phasellus ut ullamcorper est. Aliquam eget nisi id metus efficitur tincidunt. Duis ante nulla, consequat a arcu id, vestibulum semper nisi. Mauris diam nisl, fermentum vel fringilla eu, finibus id tellus. Duis malesuada dui ut dictum venenatis. Cras ultrices et mauris sit amet posuere. </p>
     </div>
+    <script>
+    $(document).ready(function(){
+      $("#ourMissionBtn").click(function() {
+        $('html, body').animate({
+          scrollTop: $("#ourMissionText").offset().top
+        }, 700);
+      });
+    });
+
+    </script>
   </body>
 </html>
