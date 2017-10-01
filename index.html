@@ -37,8 +37,8 @@
       bottom: 5px;
       height: 4px;
       transition-property: top bottom;
-      transition-duration: 0.4s;
-      transition-timing-function: ease-out;
+      transition-duration: 0.6s;
+      transition-timing-function: ease;
       background: #247BA0;
     }
     .underlineAnimate:hover:after,
@@ -128,13 +128,14 @@
     		  <div class="modal-body">
     			<form>
     			  <div class="form-group">
-      				<label for="recipient-name" class="form-control-label">Username:</label>
-      				<input type="text" class="form-control" id="recipient-name">
+              <label for="sender-name" class="form-control-label">Name:</label>
+              <input type="text" class="form-control" id="sender-name">
+              <br>
+      				<label for="sender-email" class="form-control-label">Email:</label>
+      				<input type="text" class="form-control" id="sender-email">
               <br>
               <label for="subject-name" class="form-control-label">Subject:</label>
               <input type="text" class="form-control" id="subject-name">
-    			  </div>
-    			  <div class="form-group">
               <br>
       				<label for="message-text" class="form-control-label">Message:</label>
       				<textarea class="form-control" id="message-text"></textarea>
