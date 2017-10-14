@@ -93,7 +93,7 @@
 			color:#247BA0; /*Color of the header*/
 		}
 
-		#loginSubmitBtn {
+		#loginSignUpSubmitBtn {
 			border-radius: 4px; /*Rounds button edges*/
 		  color: white; /*Text of submit*/
 		  background-color: #247BA0; /*Background color of button*/
@@ -107,11 +107,11 @@
 			margin-top:10px; /*How far the submit button is away from the thing above it*/
 		}
 
-    #loginSubmitBtn:hover {
+    #loginSignUpSubmitBtn:hover {
 		  background-color: #0A678F; /*Color of background when cursor is hovering on submit button*/
 		}
 
-		.loginText { /*Controls text and text box for username and password*/
+		.loginSignUpText { /*Controls text and text box for username and password*/
 		  height: 50px; /*Height of text boxes*/
 		  font-size: 16px; /*Font size of placeholder text and text typed into box*/
 		  width: 100%; /*Takes up all space on modal while keeping padding*/
@@ -122,7 +122,7 @@
 			border-bottom:1px solid #247BA0; /*Gives us only the bottom border*/
 		}
 
-		.loginText:hover {
+		.loginSignUpText:hover {
 		  border-bottom: 2px solid #0A678F; /*Adds a border when hovering over username and password text boxes*/
 		}
 
@@ -137,15 +137,26 @@
 		#signUpLoginModalText{ /*Text underneath the hr that allowss the user to sign up from the login modal*/
 			text-align: center;
 		}
-		#loginModalHR{
-			border:0.3px solid #247BA0;
+		#loginSignUpModalHR{
+			border:0.3px solid #247BA0; /*Changes the horizontal rule's thickness and color*/
 		}
+
+    /********Contact Us Modal**********/
+		#contactUsCloseBtn:hover{
+			background-color:#C9C9C9; /*Changes background color of "Close" button when the cursor is hovering over it*/
+		}
+    #contactUsSubmitBtn{
+      background-color:#247BA0; /*Sets the background of the "Submit" to the specified hex*/
+    }
+    #contactUsSubmitBtn:hover{
+      background-color: #0A678F; /*Changes background color of "Submit" button when the cursor is hovering over it*/
+    }
     </style>
   </head>
   <body>
     <div class="nav">
         <ul class="pull-right">
-          <li><a href="#" id="signUpBtn" class="underlineAnimate">Sign Up</a></li>
+          <li><a href="#" id="signUpBtn" class="underlineAnimate" data-toggle="modal" data-target="#signUp-modal">Sign Up</a></li>
           <li><a href="#" id="loginBtn" class="underlineAnimate" data-toggle="modal" data-target="#login-modal">Log In</a></li>
           <li><a href="#ourMissionHeader" id="ourMissionBtn" class="underlineAnimate">Our Mission</a></li>
   		  <li><a href="#" id="contactUsBtn" class="underlineAnimate" data-toggle="modal" data-target="#contact-modal">Contact Us</a></li>
@@ -177,16 +188,19 @@
     	  <div class="modal-dialog">
 				<div class="loginmodal-container">
 					<!--<img src="images/wiocLogo.png" style="width: 20px; height: 15px;">-->
-					<h1>Log In To Your Account</h1><br>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
+					<h1>Log in to Your Account</h1><br>
 				  <form>
-						<input type="text" name="loginUsername" id="loginUsername" class="loginText" placeholder="Username">
-						<input type="password" name="loginPassword" id="loginPassword" class="loginText" placeholder="Password">
-						<input type="submit" name="loginSubmitBtn" id="loginSubmitBtn" class="login" value="Log in">
+						<input type="text" name="loginUsername" id="loginUsername" class="loginSignUpText" placeholder="Username">
+						<input type="password" name="loginPassword" id="loginPassword" class="loginSignUpText" placeholder="Password">
+						<input type="submit" name="loginSubmitBtn" id="loginSignUpSubmitBtn" class="login" value="Log In">
 				  </form>
 				  <div>
 						<p id="forgotPasswordText"><a href="#">Forgot Password?</a></p>
 				  </div>
-					<hr id="loginModalHR">
+					<hr id="loginSignUpModalHR">
 					<div>
 						<p id="signUpLoginModalText">Don't have an account? <a href="#">Sign Up</a></p>
 					</div>
@@ -194,39 +208,63 @@
 			</div>
 		  </div>
 
-    <div class="modal fade" id="contact-modal" tabindex="-1" role="dialog" aria-labelledby="contactUsTitle" aria-hidden="true">
-  	  <div class="modal-dialog" role="document">
-    		<div class="modal-content">
-    		  <div class="modal-header">
-    			<h5 class="modal-title" id="contactUsTitle">New message</h5>
-    			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-    			  <span aria-hidden="true">&times;</span>
-    			</button>
-    		  </div>
-    		  <div class="modal-body">
-    			<form>
-    			  <div class="form-group">
-              <label for="sender-name" class="form-control-label">Name:</label>
-              <input type="text" class="form-control" id="sender-name">
-              <br>
-      				<label for="sender-email" class="form-control-label">Email:</label>
-      				<input type="text" class="form-control" id="sender-email">
-              <br>
-              <label for="subject-name" class="form-control-label">Subject:</label>
-              <input type="text" class="form-control" id="subject-name">
-              <br>
-      				<label for="message-text" class="form-control-label">Message:</label>
-      				<textarea class="form-control" id="message-text"></textarea>
-    			  </div>
-    			</form>
-    		  </div>
-      		  <div class="modal-footer">
-      			<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      			<button type="button" class="btn btn-primary">Submit</button>
-    		  </div>
-    		</div>
-  	  </div>
-	</div>
+      <div class="modal fade" id="signUp-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+          <div class="loginmodal-container">
+            <!--<img src="images/wiocLogo.png" style="width: 20px; height: 15px;">-->
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h1>Create an Account</h1><br>
+            <form>
+              <input type="text" name="signUpUsername" id="signUpModalUsername" class="loginSignUpText" placeholder="Username">
+              <input type="text" name="signUpEmail" id="signUpUsername" class="loginSignUpText" placeholder="Email">
+              <input type="password" name="signUpPassword" id="signUpPassword" class="loginSignUpText" placeholder="Password">
+              <input type="password" name="signUpConfirmPassword" id="signUpConfirmPassword" class="loginSignUpText" placeholder="Confirm Password">
+              <input type="submit" name="signUpSubmitBtn" id="loginSignUpSubmitBtn" class="login" value="Sign Up">
+            </form>
+            <hr id="loginSignUpModalHR">
+            <div>
+              <p id="signUpLoginModalText">Already have an account? <a href="#">Login</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="contact-modal" tabindex="-1" role="dialog" aria-labelledby="contactUsTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <h2 class="modal-title" id="contactUsNewMessageText">Contact Us</h2>
+              <p class="modal-title" id="contactUsNewMessageText">We love feedback. Send us some.</p>
+            </div>
+            <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="sender-name" class="form-control-label contactUsTitle">Name:</label>
+                <input type="text" class="form-control" id="sender-name">
+                <br>
+                <label for="sender-email" class="form-control-label contactUsTitle">Email:</label>
+                <input type="text" class="form-control" id="sender-email">
+                <br>
+                <label for="subject-name" class="form-control-label contactUsTitle">Subject:</label>
+                <input type="text" class="form-control " id="subject-name">
+                <br>
+                <label for="message-text" class="form-control-label contactUsTitle">Message:</label>
+                <textarea class="form-control " id="message-text"></textarea>
+              </div>
+            </form>
+            </div>
+              <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" id="contactUsCloseBtn" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" id="contactUsSubmitBtn">Submit</button>
+            </div>
+          </div>
+        </div>
+    </div>
 
     <div id="ourMissionText">
       <hr id="ourMissionHR" class="space">
