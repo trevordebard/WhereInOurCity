@@ -7,6 +7,9 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
   <style>
+
+
+    /***Underline Animation***/
     .underlineAnimate {
       display: inline;
       position: relative;
@@ -51,7 +54,6 @@
       positon:relative;
       top:2px;
     }
-
     .navbar-brand>img{
       margin-top:-23px;
       height:60px;
@@ -135,6 +137,18 @@
     #contactUsSubmitBtn:hover{
       background-color: #0A678F; /*Changes background color of "Submit" button when the cursor is hovering over it*/
     }
+
+    /*****DOES NOT Stop the scrolling in background of modal jump BUT does fix all other problems with jumping back and forth*******/
+    body {
+      padding-right:0px !important; /*Keeps the content in the body from moving right after the modal is opened from the first modal*/
+      margin-right:0px !important; /*Keeps the content in the body from moving right after the modal is opened from the first modal*/
+      overflow: auto; /*This just says that if there is scrolling on the page to let it happen*/
+    }
+    body.modal-open {
+      overflow-x: hidden !important;
+      overflow-y: hidden !important;
+      padding-right: 0 !important; /*Keep content where it is*/
+    }
   </style>
 </head>
 <body>
@@ -193,7 +207,7 @@
         </div>
         <hr id="loginSignUpModalHR">
         <div>
-          <p id="signUpLoginModalText">Don't have an account? <a href="#">Sign Up</a></p>
+          <p id="signUpLoginModalText">Don't have an account? <a href="#" id="closeCityLogin_openCitySignUp">Sign Up</a></p>
         </div>
       </div>
     </div>
@@ -216,7 +230,7 @@
           </form>
           <hr id="loginSignUpModalHR">
           <div>
-            <p id="signUpLoginModalText">Already have an account? <a href="#">Login</a></p>
+            <p id="signUpLoginModalText">Already have an account? <a href="#" id="closeCitySignUp_openCityLogin">Login</a></p>
           </div>
         </div>
       </div>
@@ -259,7 +273,18 @@
 
   <div style="margin: 0 auto; width: 25%; text-align: center">
     <h3>Baton Rouge</h3>
-    <a href="#">Change city</a>
+    <hr style="margin: 3px; border-top: 0.9px solid #959494;">
+    <a style="cursor: pointer;" data-toggle="modal" data-target="#myModal">Change city</a>
+  </div>
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+       <div class="modal-content">
+         <div class="modal-body">
+           <a href="cityhome.html"><button class="btn btn-primary horizontal-center brBtn">Baton Rouge</button></a>
+         </div>
+       </div>
+     </div>
   </div>
   <script>
   $("#inputSearchBar").focus(function() {
@@ -272,6 +297,15 @@
     $("#inputSearchBar").animate({
       width: "100px",
     });
+  });
+
+  $("#closeCityLogin_openCitySignUp").click(function() {
+    $("#cityLogin-modal").modal('hide');
+    $("#citySignUp-modal").modal('show');
+  });
+  $("#closeCitySignUp_openCityLogin").click(function() {
+    $("#citySignUp-modal").modal('hide');
+    $("#cityLogin-modal").modal('show');
   });
   </script>
 

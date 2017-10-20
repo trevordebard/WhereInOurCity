@@ -151,6 +151,18 @@
     #contactUsSubmitBtn:hover{
       background-color: #0A678F; /*Changes background color of "Submit" button when the cursor is hovering over it*/
     }
+
+    /*****DOES NOT Stop the scrolling in background of modal jump BUT does fix all other problems with jumping back and forth*******/
+    body {
+      padding-right:0px !important; /*Keeps the content in the body from moving right after the modal is opened from the first modal*/
+      margin-right:0px !important; /*Keeps the content in the body from moving right after the modal is opened from the first modal*/
+      overflow: auto; /*This just says that if there is scrolling on the page to let it happen*/
+    }
+    body.modal-open {
+      overflow-x: hidden !important;
+      overflow-y: hidden !important;
+      padding-right: 0 !important; /*Keep content where it is*/
+    }
     </style>
   </head>
   <body>
@@ -202,7 +214,7 @@
 				  </div>
 					<hr id="loginSignUpModalHR">
 					<div>
-						<p id="signUpLoginModalText">Don't have an account? <a href="#">Sign Up</a></p>
+						<p id="signUpLoginModalText">Don't have an account? <a href="#" id="closeLogin_openSignUp">Sign Up</a></p>
 					</div>
 				</div>
 			</div>
@@ -225,7 +237,7 @@
             </form>
             <hr id="loginSignUpModalHR">
             <div>
-              <p id="signUpLoginModalText">Already have an account? <a href="#">Login</a></p>
+              <p id="signUpLoginModalText">Already have an account? <a href="#" id="closeSignUp_openLogin">Login</a></p>
             </div>
           </div>
         </div>
@@ -285,6 +297,15 @@
         }, 700);
       });
     });
+
+    $("#closeLogin_openSignUp").click(function() {
+			$("#login-modal").modal('hide');
+			$("#signUp-modal").modal('show');
+		});
+		$("#closeSignUp_openLogin").click(function() {
+  		$("#signUp-modal").modal('hide');
+  		$("#login-modal").modal('show');
+	});
 
     </script>
   </body>
