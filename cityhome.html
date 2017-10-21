@@ -32,23 +32,11 @@
     }
 
     /*Also couldnt figure out how to change background color of the navbar when the webpage is half the computer screen*/
-
-    /*****DOES NOT Stop the scrolling in background of modal jump BUT does fix all other problems with jumping back and forth*******/
-    body {
-      padding-right:0px !important; /*Keeps the content in the body from moving right after the modal is opened from the first modal*/
-      margin-right:0px !important; /*Keeps the content in the body from moving right after the modal is opened from the first modal*/
-      overflow: auto; /*This just says that if there is scrolling on the page to let it happen*/
-    }
-    body.modal-open {
-      overflow-x: hidden !important;
-      overflow-y: hidden !important;
-      padding-right: 0 !important; /*Keep content where it is*/
-    }
   </style>
 </head>
 <body>
   <nav class="navbar navbar-default">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="cityhome.html">
       <img src="images/wiocLogo.png" id="wiocNavbarLogo" alt="">
     </a>
     <!--Need to link this wioc logo back to index.html-->
@@ -76,7 +64,7 @@
 		</div>
 		<ul class="nav navbar-nav navbar-right">
 		  <li class="nav-item"><a href="#" id="loginBtnCity" class="navbarText underlineAnimate txtBlack" data-toggle="modal" data-target="#cityLogin-modal">Log in</a></li>
-		  <li><a href="#" id="signUpBtnCity" class="navbarText underlineAnimate txtBlack" data-toggle="modal" data-target="#citySignUp-modal">Sign Up</a></li>
+		  <li><a href="SignUpPage.html" id="signUpBtnCity" class="navbarText underlineAnimate txtBlack">Sign Up</a></li>
 		  <li><a href="#" id="contactUsBtnCity" class="navbarText underlineAnimate txtBlack" data-toggle="modal" data-target="#cityContactUs-modal">Contact Us</a></li>
       <!--Fix How the underline animation looks when web page is half screened-->
 		</ul>
@@ -102,33 +90,10 @@
         </div>
         <hr id="loginSignUpModalHR">
         <div>
-          <p id="signUpLoginModalText">Don't have an account? <a href="#" id="closeCityLogin_openCitySignUp">Sign Up</a></p>
+          <p id="signUpLoginModalText">Don't have an account? <a href="SignUpPage.html">Sign Up</a></p>
         </div>
       </div>
     </div>
-    </div>
-
-    <div class="modal fade" id="citySignUp-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-        <div class="loginmodal-container">
-          <!--<img src="images/wiocLogo.png" style="width: 20px; height: 15px;">-->
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-          </button>
-          <h1>Create an Account</h1><br>
-          <form>
-            <input type="text" name="signUpUsername" id="signUpModalUsername" class="loginSignUpText" placeholder="Username">
-            <input type="text" name="signUpEmail" id="signUpUsername" class="loginSignUpText" placeholder="Email">
-            <input type="password" name="signUpPassword" id="signUpPassword" class="loginSignUpText" placeholder="Password">
-            <input type="password" name="signUpConfirmPassword" id="signUpConfirmPassword" class="loginSignUpText" placeholder="Confirm Password">
-            <input type="submit" name="signUpSubmitBtn" id="loginSignUpSubmitBtn" class="login" value="Sign Up">
-          </form>
-          <hr id="loginSignUpModalHR">
-          <div>
-            <p id="signUpLoginModalText">Already have an account? <a href="#" id="closeCitySignUp_openCityLogin">Login</a></p>
-          </div>
-        </div>
-      </div>
     </div>
 
     <div class="modal fade" id="cityContactUs-modal" tabindex="-1" role="dialog" aria-labelledby="contactUsTitle" aria-hidden="true">

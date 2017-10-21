@@ -50,24 +50,12 @@
     #message-text {
       resize: vertical;
     }
-
-    /*****DOES NOT Stop the scrolling in background of modal jump BUT does fix all other problems with jumping back and forth*******/
-    body {
-      padding-right:0px !important; /*Keeps the content in the body from moving right after the modal is opened from the first modal*/
-      margin-right:0px !important; /*Keeps the content in the body from moving right after the modal is opened from the first modal*/
-      overflow: auto; /*This just says that if there is scrolling on the page to let it happen*/
-    }
-    body.modal-open {
-      overflow-x: hidden !important;
-      overflow-y: hidden !important;
-      padding-right: 0 !important; /*Keep content where it is*/
-    }
     </style>
   </head>
   <body>
     <div class="nav">
         <ul class="pull-right">
-          <li><a href="#" id="signUpBtn" class="underlineAnimate" data-toggle="modal" data-target="#signUp-modal">Sign Up</a></li>
+          <li><a href="SignUpPage.html" id="signUpBtn" class="underlineAnimate">Sign Up</a></li>
           <li><a href="#" id="loginBtn" class="underlineAnimate" data-toggle="modal" data-target="#login-modal">Log In</a></li>
           <li><a href="#ourMissionHeader" id="ourMissionBtn" class="underlineAnimate">Our Mission</a></li>
   		  <li><a href="#" id="contactUsBtn" class="underlineAnimate" data-toggle="modal" data-target="#contact-modal">Contact Us</a></li>
@@ -113,34 +101,13 @@
 				  </div>
 					<hr id="loginSignUpModalHR">
 					<div>
-						<p id="signUpLoginModalText">Don't have an account? <a href="#" id="closeLogin_openSignUp">Sign Up</a></p>
+						<p id="signUpLoginModalText">Don't have an account? <a href="SignUpPage.html">Sign Up</a></p>
 					</div>
 				</div>
 			</div>
 		  </div>
 
-      <div class="modal fade" id="signUp-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-          <div class="loginmodal-container">
-            <!--<img src="images/wiocLogo.png" style="width: 20px; height: 15px;">-->
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-            <h1>Create an Account</h1><br>
-            <form>
-              <input type="text" name="signUpUsername" id="signUpModalUsername" class="loginSignUpText" placeholder="Username">
-              <input type="text" name="signUpEmail" id="signUpUsername" class="loginSignUpText" placeholder="Email">
-              <input type="password" name="signUpPassword" id="signUpPassword" class="loginSignUpText" placeholder="Password">
-              <input type="password" name="signUpConfirmPassword" id="signUpConfirmPassword" class="loginSignUpText" placeholder="Confirm Password">
-              <input type="submit" name="signUpSubmitBtn" id="loginSignUpSubmitBtn" class="login" value="Sign Up">
-            </form>
-            <hr id="loginSignUpModalHR">
-            <div>
-              <p id="signUpLoginModalText">Already have an account? <a href="#" id="closeSignUp_openLogin">Login</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
+
 
       <div class="modal fade" id="contact-modal" tabindex="-1" role="dialog" aria-labelledby="contactUsTitle" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -196,15 +163,6 @@
         }, 700);
       });
     });
-
-    $("#closeLogin_openSignUp").click(function() {
-			$("#login-modal").modal('hide');
-			$("#signUp-modal").modal('show');
-		});
-		$("#closeSignUp_openLogin").click(function() {
-  		$("#signUp-modal").modal('hide');
-  		$("#login-modal").modal('show');
-	});
 
     </script>
   </body>
