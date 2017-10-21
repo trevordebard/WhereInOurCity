@@ -14,6 +14,8 @@
       padding: 15px 10px;
       font-family: helvetica, sans-serif;
       margin-left: 1px;
+      position:relative;
+      top:0;
     }
     .nav.navbar-nav.navbar-right li a {
       color: #464646;
@@ -39,7 +41,6 @@
     <a class="navbar-brand" href="cityhome.html">
       <img src="images/wiocLogo.png" id="wiocNavbarLogo" alt="">
     </a>
-    <!--Need to link this wioc logo back to index.html-->
   <div class="navbar-header">
     <button type="button" class="navbar-toggle" id="collapsedCityNavbar" data-toggle="collapse" data-target="#cityNavbar">
       <span class="sr-only">Toggle navigation</span>
@@ -63,7 +64,7 @@
 			</form>
 		</div>
 		<ul class="nav navbar-nav navbar-right">
-		  <li class="nav-item"><a href="#" id="loginBtnCity" class="navbarText underlineAnimate txtBlack" data-toggle="modal" data-target="#cityLogin-modal">Log in</a></li>
+		  <li><a href="#" id="loginBtnCity" class="navbarText underlineAnimate txtBlack" data-toggle="modal" data-target="#cityLogin-modal">Log in</a></li>
 		  <li><a href="SignUpPage.html" id="signUpBtnCity" class="navbarText underlineAnimate txtBlack">Sign Up</a></li>
 		  <li><a href="#" id="contactUsBtnCity" class="navbarText underlineAnimate txtBlack" data-toggle="modal" data-target="#cityContactUs-modal">Contact Us</a></li>
       <!--Fix How the underline animation looks when web page is half screened-->
@@ -157,15 +158,6 @@
     $("#inputSearchBar").animate({
       width: "100px",
     });
-  });
-
-  $("#closeCityLogin_openCitySignUp").click(function() {
-    $("#cityLogin-modal").modal('hide');
-    $("#citySignUp-modal").modal('show');
-  });
-  $("#closeCitySignUp_openCityLogin").click(function() {
-    $("#citySignUp-modal").modal('hide');
-    $("#cityLogin-modal").modal('show');
   });
   </script>
 
