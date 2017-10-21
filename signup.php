@@ -95,22 +95,11 @@
   	</nav>
     <div id="signUpContainer">
       <h1>Create an Account</h1>
-      <form>
-        <input type="text" name="signUpUsername" id="signUpUser" class="signUpText" placeholder="Username">
-        <input type="text" name="signUpEmail" id="signUpEmal" class="signUpText" placeholder="Email">
-        <input type="password" name="signUpPassword" id="signUpPass" class="signUpText" placeholder="Password">
-        <input type="password" name="signUpPassword" id="signUpPassConfirm" class="signUpText" placeholder="Confirm Password">
-
-          <div id="selectStyle">
-            <p id="yourCityText">Your City:
-    				<select>
-    					<option selected>Baton Rouge</option>
-    					<option>Dallas</option>
-    				</select>
-          </p>
-          </div>
-
-        <input type="submit" name="signUpSubmitBtn" id="signUpSubmit" class="signUp" value="Sign Up">
+      <form action="includes/signup-inc.php" method="POST">
+        <input type="text" name="username" id="signUpUser" class="signUpText" placeholder="Username">
+        <input type="text" name="email" id="signUpEmal" class="signUpText" placeholder="Email">
+        <input type="password" name="password" id="signUpPass" class="signUpText" placeholder="Password">
+        <button type="submit" name="signUpSubmitBtn" id="signUpSubmit" class="signUp">Sign up</button>
       </form>
     </div>
 
