@@ -13,6 +13,6 @@ if(isset($_POST['signUpSubmitBtn'])) { //checks to make sure signUpSubmitBtn bro
   exit();
 }
 else {
-  header("Location: ../index.html"); //if someone types in the url, this redirects to signup.php
+  header("Location: ../index.php"); //if someone types in the url, this redirects to signup.php
   exit(); //Stops script from running
 }

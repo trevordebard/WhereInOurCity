@@ -88,7 +88,7 @@
 
   <body>
     <nav class="navbar navbar-default">
-      <a class="navbar-brand" href="index.html">
+      <a class="navbar-brand" href="index.php">
         <img src="images/wiocLogo.png" id="wiocNavbarLogo" alt="">
       </a>
       <!--Need to link this wioc logo back to index.html-->

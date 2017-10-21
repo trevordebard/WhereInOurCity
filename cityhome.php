@@ -1,3 +1,7 @@
+<?php
+  session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,7 +42,7 @@
 </head>
 <body>
   <nav class="navbar navbar-default">
-    <a class="navbar-brand" href="cityhome.html">
+    <a class="navbar-brand" href="cityhome.php">
       <img src="images/wiocLogo.png" id="wiocNavbarLogo" alt="">
     </a>
   <div class="navbar-header">
@@ -64,8 +68,8 @@
 			</form>
 		</div>
 		<ul class="nav navbar-nav navbar-right">
-		  <li><a href="#" id="loginBtnCity" class="navbarText underlineAnimate txtBlack" data-toggle="modal" data-target="#cityLogin-modal">Log in</a></li>
-		  <li><a href="SignUpPage.html" id="signUpBtnCity" class="navbarText underlineAnimate txtBlack">Sign Up</a></li>
+		  <li><a href="#" name="loginBtnCity" class="navbarText underlineAnimate txtBlack" data-toggle="modal" data-target="#cityLogin-modal">Log in</a></li>
+		  <li><a href="signup.php" name="signUpBtnCity" class="navbarText underlineAnimate txtBlack">Sign Up</a></li>
 		  <li><a href="#" id="contactUsBtnCity" class="navbarText underlineAnimate txtBlack" data-toggle="modal" data-target="#cityContactUs-modal">Contact Us</a></li>
       <!--Fix How the underline animation looks when web page is half screened-->
 		</ul>
@@ -91,7 +95,7 @@
         </div>
         <hr id="loginSignUpModalHR">
         <div>
-          <p id="signUpLoginModalText">Don't have an account? <a href="SignUpPage.html">Sign Up</a></p>
+          <p id="signUpLoginModalText">Don't have an account? <a href="signup.php">Sign Up</a></p>
         </div>
       </div>
     </div>
@@ -142,7 +146,7 @@
       <!-- Modal content-->
        <div class="modal-content">
          <div class="modal-body">
-           <a href="cityhome.html"><button class="btn btn-primary horizontal-center brBtn">Baton Rouge</button></a>
+           <a href="cityhome.php"><button class="btn btn-primary horizontal-center brBtn">Baton Rouge</button></a>
          </div>
        </div>
      </div>

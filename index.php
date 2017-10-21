@@ -1,3 +1,7 @@
+<?php
+  session_start();
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -54,12 +58,22 @@
   </head>
   <body>
     <div class="nav">
-        <ul class="pull-right">
-          <li><a href="signup.php" id="signUpBtn" class="underlineAnimate">Sign Up</a></li>
-          <li><a href="#" id="loginBtn" class="underlineAnimate" data-toggle="modal" data-target="#login-modal">Log In</a></li>
-          <li><a href="#ourMissionHeader" id="ourMissionBtn" class="underlineAnimate">Our Mission</a></li>
-  		  <li><a href="#" id="contactUsBtn" class="underlineAnimate" data-toggle="modal" data-target="#contact-modal">Contact Us</a></li>
-        </ul>
+      <?php
+        if(isset($_SESSION['u_id'])){
+          echo '<ul class="pull-right">
+                  <form action="includes/logout.inc.php" method="POST">
+                    <li><button type="submit" name="logoutBtn" class="underlineAnimate">Log Out</button></li>
+                  </form>
+                </ul>';
+        }else{
+          echo '<ul class="pull-right">
+                  <li><a href="signup.php" id="signUpBtn" class="underlineAnimate">Sign Up</a></li>
+                  <li><a href="#" id="loginBtn" class="underlineAnimate" data-toggle="modal" data-target="#login-modal">Log In</a></li>
+                  <li><a href="#ourMissionHeader" id="ourMissionBtn" class="underlineAnimate">Our Mission</a></li>
+          		    <li><a href="#" id="contactUsBtn" class="underlineAnimate" data-toggle="modal" data-target="#contact-modal">Contact Us</a></li>
+                </ul>';
+        }
+      ?>
     </div>
 
     <div id="logo-header" align="center">
@@ -76,7 +90,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-body">
-            <a href="cityhome.html"><button class="btn btn-primary horizontal-center brBtn">Baton Rouge</button></a>
+            <a href="cityhome.php"><button class="btn btn-primary horizontal-center brBtn">Baton Rouge</button></a>
           </div>
         </div>
       </div>
@@ -91,9 +105,9 @@
           <span aria-hidden="true">&times;</span>
           </button>
 					<h1>Log in to Your Account</h1><br>
-				  <form>
-						<input type="text" name="loginUsername" id="loginUsername" class="loginSignUpText" placeholder="Username">
-						<input type="password" name="loginPassword" id="loginPassword" class="loginSignUpText" placeholder="Password">
+				  <form action="includes/login.inc.php" method="POST">
+						<input type="text" name="loginUsername" class="loginSignUpText" placeholder="Username">
+						<input type="password" name="loginPassword" class="loginSignUpText" placeholder="Password">
 						<input type="submit" name="loginSubmitBtn" id="loginSignUpSubmitBtn" class="login" value="Log In">
 				  </form>
 				  <div>
