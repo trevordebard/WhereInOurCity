@@ -27,32 +27,7 @@
       margin-left: 1px;
       text-decoration: none;
     }
-    .underlineAnimate{
-      display: inline;
-      position: relative;
-      overflow: hidden;
-      top: 6px;
-    }
-    .underlineAnimate:after {
-      content: "";
-      background:#247BA0;
-      position: absolute;
-      left: 0;
-      right: 100%;
-      bottom: 5px;
-      height: 4px;
-      transition-property: top bottom;
-      transition-duration: 0.4s;
-      transition-timing-function: ease-out;
-    }
-    .underlineAnimate:hover:after,
-    .underlineAnimate:focus:after,
-    .underlineAnimate:active:after {
-      right: 0;
-    }
-    .nav li {
-      display: inline;
-    }
+
     /*************************/
     .space{
       margin-top: 35%;
@@ -74,82 +49,6 @@
     }
     #message-text {
       resize: vertical;
-    }
-
-    /*****LOGIN MODAL******/
-    .loginmodal-container {
-		  padding: 40px; /*How far away the contents are from the border of the modal*/
-		  width:500px; /*Width of modal*/
-		  background-color: white; /*Background color of modal*/
-		  margin: 0 auto; /*Since we specified the width, this will make everything sit in the center of the modal*/
-		  border-radius: 4px; /*Rounded edges for border*/
-		  overflow: hidden; /*Used to see content that overflows aka used if a lot of content doesnt fit on modal, hidden has no scroll bars*/
-		  font-family: helvetica, sans-serif;
-		}
-		.loginmodal-container h1 { /*Controls the header of the modal "Log in to your WIOC account"*/
-		  text-align: center; /*Centers the header*/
-		  font-size: 25px; /*Changes the size of the header*/
-		  font-family: helvetica, sans-serif;
-			color:#247BA0; /*Color of the header*/
-		}
-
-		#loginSignUpSubmitBtn {
-			border-radius: 4px; /*Rounds button edges*/
-		  color: white; /*Text of submit*/
-		  background-color: #247BA0; /*Background color of button*/
-		  padding: 10px 0px; /*Affects the height of the button*/
-		  font-size: 19px; /*Font size of the text on the button*/
-			border:none; /*Need this or as some dumb auto border, can do this with border:0 not sure which is better practice*/
-			width: 100%; /*Takes up all space on modal while keeping padding*/
-		  display: block;
-		  margin-bottom: 10px; /*How far the button is away from the thing below it*/
-		  position: relative;
-			margin-top:10px; /*How far the submit button is away from the thing above it*/
-		}
-
-    #loginSignUpSubmitBtn:hover {
-		  background-color: #0A678F; /*Color of background when cursor is hovering on submit button*/
-		}
-
-		.loginSignUpText { /*Controls text and text box for username and password*/
-		  height: 50px; /*Height of text boxes*/
-		  font-size: 16px; /*Font size of placeholder text and text typed into box*/
-		  width: 100%; /*Takes up all space on modal while keeping padding*/
-		  margin-bottom: 10px; /*How far away each text box is away from the thing below it*/
-		  background-color: white; /*Background color of the text boxes*/
-			padding: 0 10px; /*How far placeholder and actual typed text are away from the sides from the textbox, also affects where the text starts*/
-		  border: none; /*Border of text box*/
-			border-bottom:1px solid #247BA0; /*Gives us only the bottom border*/
-		}
-
-		.loginSignUpText:hover {
-		  border-bottom: 2px solid #0A678F; /*Adds a border when hovering over username and password text boxes*/
-		}
-
-		.loginmodal-container a{ /*Forgot Password font, sign up font and anything else that uses the tag a in the login modal*/
-		  color: #247BA0; /*Color of "Change Password"*/
-		  font-size:13px; /*Size of "Change Password"*/
-		}
-		#forgotPasswordText{ /*Paragraph tag that is used to center and move the forgot password text slightly down*/
-			text-align: center;
-			margin-top:20px;
-		}
-		#signUpLoginModalText{ /*Text underneath the hr that allowss the user to sign up from the login modal*/
-			text-align: center;
-		}
-		#loginSignUpModalHR{
-			border:0.3px solid #247BA0; /*Changes the horizontal rule's thickness and color*/
-		}
-
-    /********Contact Us Modal**********/
-		#contactUsCloseBtn:hover{
-			background-color:#C9C9C9; /*Changes background color of "Close" button when the cursor is hovering over it*/
-		}
-    #contactUsSubmitBtn{
-      background-color:#247BA0; /*Sets the background of the "Submit" to the specified hex*/
-    }
-    #contactUsSubmitBtn:hover{
-      background-color: #0A678F; /*Changes background color of "Submit" button when the cursor is hovering over it*/
     }
 
     /*****DOES NOT Stop the scrolling in background of modal jump BUT does fix all other problems with jumping back and forth*******/
