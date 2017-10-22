@@ -115,7 +115,7 @@
 				  </div>
 					<hr id="loginSignUpModalHR">
 					<div>
-						<p id="signUpLoginModalText">Don't have an account? <a href="SignUpPage.html">Sign Up</a></p>
+						<p id="signUpLoginModalText">Don't have an account? <a href="signup.php">Sign Up</a></p>
 					</div>
 				</div>
 			</div>
