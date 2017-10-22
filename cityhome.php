@@ -41,75 +41,11 @@
   </style>
 </head>
 <body>
-  <nav class="navbar navbar-default">
-    <a class="navbar-brand" href="cityhome.php">
-      <img src="images/wiocLogo.png" id="wiocNavbarLogo" alt="">
-    </a>
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" id="collapsedCityNavbar" data-toggle="collapse" data-target="#cityNavbar">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-  </div>
-  <div class="collapse navbar-collapse" id="cityNavbar">
-		<div class="col-sm-3 col-md-3">
-			<form class="navbar-form" role="search" id="searchBar">
-			<div class="input-group">
-				<input id="inputSearchBar" type="text" class="form-control" placeholder="Search..." name="searchNewCity">
-        <!--Maybe try to center this search bar?-->
-				<div class="input-group-btn">
-					<button id="inputSearchBtn" class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-				</div>
-			</div>
-			</form>
-		</div>
-		<ul class="nav navbar-nav navbar-right">
-		  <li><a href="#" name="loginBtnCity" class="navbarText underlineAnimate txtBlack" data-toggle="modal" data-target="#login-modal">Log in</a></li>
-		  <li><a href="signup.php" name="signUpBtnCity" class="navbarText underlineAnimate txtBlack">Sign Up</a></li>
-		  <li><a href="#" id="contactUsBtnCity" class="navbarText underlineAnimate txtBlack" data-toggle="modal" data-target="#cityContactUs-modal">Contact Us</a></li>
-      <!--Fix How the underline animation looks when web page is half screened-->
-		</ul>
-	  </div>
-	</nav>
   <?php
-    include("templates/loginModal.html");
+    include("templates/main-navbar.html");
+    include("templates/login-modal.html");
+    include("templates/contact-us-modal.html");
   ?>
-  <div class="modal fade" id="cityContactUs-modal" tabindex="-1" role="dialog" aria-labelledby="contactUsTitle" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-          <h2 class="modal-title" id="contactUsNewMessageText">Contact Us</h2>
-          <p class="modal-title" id="contactUsNewMessageText">We love feedback. Send us some.</p>
-        </div>
-        <div class="modal-body">
-        <form>
-          <div class="form-group">
-            <label for="sender-name" class="form-control-label contactUsTitle">Name:</label>
-            <input type="text" class="form-control" id="sender-name">
-            <br>
-            <label for="sender-email" class="form-control-label contactUsTitle">Email:</label>
-            <input type="text" class="form-control" id="sender-email">
-            <br>
-            <label for="subject-name" class="form-control-label contactUsTitle">Subject:</label>
-            <input type="text" class="form-control " id="subject-name">
-            <br>
-            <label for="message-text" class="form-control-label contactUsTitle">Message:</label>
-            <textarea class="form-control " id="message-text"></textarea>
-          </div>
-        </form>
-        </div>
-          <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" id="contactUsCloseBtn" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" id="contactUsSubmitBtn">Submit</button>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <div style="margin: 0 auto; width: 25%; text-align: center">
     <h3>Baton Rouge</h3>
