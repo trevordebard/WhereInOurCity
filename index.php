@@ -54,57 +54,72 @@
     #message-text {
       resize: vertical;
     }
+
+    .navbarText {
+      font-size: 15px;
+      font-weight: bold;
+      font-family: helvetica, sans-serif;
+      postion:relative;
+      top:-8px;
+    }
+    .nav.navbar-nav.navbar-right li a {
+      color: #464646;
+      margin-left:0;
+    }
+    .nav.navbar-nav.navbar-right li a:hover {
+      color: #000000;
+    }
+    .navbar-default{
+      background-color: white;
+      border:none;
+    }
     </style>
   </head>
   <body>
+    <?php
+      if(isset($_SESSION['u_id'])){
+        echo '<nav class="navbar navbar-default">
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" id="collapsedCityNavbar" data-toggle="collapse" data-target="#cityNavbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                </div>
+                <div class="collapse navbar-collapse" id="cityNavbar">
+                  <ul class="nav navbar-nav navbar-right">
+                    <li><form action="includes/logout.inc.php" method="POST">
+                      <li><button type="submit" name="logoutBtn">Log Out</button></li>
+                    </form></li>
+                    <li><a href="#ourMissionHeader" id="ourMissionBtn" class="underlineAnimate navbarText">Our Mission</a></li>
+                    <li><a href="#" id="contactUsBtn" class="underlineAnimate navbarText" data-toggle="modal" data-target="#contact-modal">Contact Us</a></li>
+                  </ul>
+                </div>
+              </nav>';
+      }
+      else{
+        echo '<nav class="navbar navbar-default">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" id="collapsedCityNavbar" data-toggle="collapse" data-target="#cityNavbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div class="collapse navbar-collapse" id="cityNavbar">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="signup.php" id="signUpBtn" class="underlineAnimate navbarText">Sign Up</a></li>
+              <li><a href="#" id="loginBtn" class="underlineAnimate navbarText" data-toggle="modal" data-target="#login-modal">Log In</a></li>
+              <li><a href="#ourMissionHeader" id="ourMissionBtn" class="underlineAnimate navbarText">Our Mission</a></li>
+              <li><a href="#" id="contactUsBtn" class="underlineAnimate navbarText" data-toggle="modal" data-target="#contact-modal">Contact Us</a></li>
+            </ul>
+          </div>
+        </nav>';
+      }
+    ?>
 
-    <div class="nav">
-      <?php
-        if(isset($_SESSION['u_id'])){
-          echo '<nav class="navbar navbar-default">
-    			<a class="navbar-brand" href="cityhome.html">
-    			</a>
-    			<div class="navbar-header">
-    				<button type="button" class="navbar-toggle" id="collapsedCityNavbar" data-toggle="collapse" data-target="#cityNavbar">
-    					<span class="sr-only">Toggle navigation</span>
-    					<span class="icon-bar"></span>
-    					<span class="icon-bar"></span>
-    					<span class="icon-bar"></span>
-    				</button>
-    			</div>
-    		  <div class="collapse navbar-collapse" id="cityNavbar">
-    				<ul class="nav navbar-nav navbar-right">
-    					<li><a href="#ourMissionHeader" id="ourMissionBtn" class="underlineAnimate navbarText">Our Mission</a></li>
-    					<li><a href="#" id="contactUsBtn" class="underlineAnimate navbarText" data-toggle="modal" data-target="#contact-modal">Contact Us</a></li>
-                        <li><button type="submit" name="logoutBtn" class="underlineAnimate">Log Out</button></li>
-    				</ul>
-    			</div>
-			</nav>';
-        }
-        else{
-          echo '<nav class="navbar navbar-default">
-			    <a class="navbar-brand" href="cityhome.html">
-			    </a>
-    			<div class="navbar-header">
-    				<button type="button" class="navbar-toggle" id="collapsedCityNavbar" data-toggle="collapse" data-target="#cityNavbar">
-    				<span class="sr-only">Toggle navigation</span>
-    				<span class="icon-bar"></span>
-    				<span class="icon-bar"></span>
-    				<span class="icon-bar"></span>
-    				</button>
-    			</div>
-    			<div class="collapse navbar-collapse" id="cityNavbar">
-    				<ul class="nav navbar-nav navbar-right">
-    					<li><a href="signup.php" id="signUpBtn" class="underlineAnimate navbarText">Sign Up</a></li>
-    					<li><a href="#" id="loginBtn" class="underlineAnimate navbarText" data-toggle="modal" data-target="#login-modal">Log In</a></li>
-    					<li><a href="#ourMissionHeader" id="ourMissionBtn" class="underlineAnimate navbarText">Our Mission</a></li>
-    					<li><a href="#" id="contactUsBtn" class="underlineAnimate navbarText" data-toggle="modal" data-target="#contact-modal">Contact Us</a></li>
-    				</ul>
-    			</div>
-  		</nav>';
-        }
-      ?>
-    </div>
     <div id="logo-header" align="center">
       <img src="images/wiocLogo.png" style="width: 200px; height: 150px; margin-top: 5%;">
     </div>
@@ -119,8 +134,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-body">
-            <a href="cityhome.php"><button class="btn btn-primary brBtn">Baton Rouge</button></a> <!-- This used to have horizontal-center but that broke for some reason. I didn't touch it.
-            For the time being I just removed it. It looks fine but just isn't centered.-->
+            <a href="cityhome.php"><button class="btn btn-primary horizontal-center brBtn">Baton Rouge</button></a>
           </div>
         </div>
       </div>
@@ -139,9 +153,7 @@
       <br>
       <p class="ourMissionText">Nunc pharetra, ex non maximus ultrices, metus erat sollicitudin orci, in scelerisque arcu lacus elementum mauris. Praesent eleifend consequat nisl, quis convallis eros dapibus ut. Fusce quam erat, maximus eget blandit id, posuere vitae ipsum. Vestibulum pharetra mauris vel mauris tincidunt suscipit. Aliquam consequat, diam eu feugiat volutpat, lorem felis vestibulum ex, nec porta dui dolor sit amet augue. Pellentesque sit amet rhoncus leo. Vestibulum tempor vestibulum malesuada. Morbi semper accumsan justo, eu volutpat nisl volutpat eu.
       In hac habitasse platea dictumst. Nam et fermentum dui. Ut nec pretium leo. Fusce ex magna, facilisis eget purus eu, rhoncus venenatis velit. In purus augue, lacinia vel metus id, consequat congue lectus. Etiam hendrerit sed ligula id ullamcorper. Donec interdum iaculis orci, sit amet pharetra enim dapibus ut. Donec luctus tellus nulla, ac maximus tellus ullamcorper non. Phasellus vitae nunc et lacus feugiat placerat. Curabitur blandit fringilla luctus. Sed egestas lectus non orci cursus, a dictum nibh imperdiet. Vestibulum rutrum vestibulum vehicula.
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      Suspendisse scelerisque est non elit pretium malesuada. Nulla orci leo, sagittis eu congue et, scelerisque in sem. Quisque posuere urna non arcu vulputate varius. In cursus nibh id leo auctor scelerisque. Phasellus ut ullamcorper est. Aliquam eget nisi id metus efficitur tincidunt. Duis ante nulla, consequat a arcu id, vestibulum semper nisi. Mauris diam nisl, fermentum vel fringilla eu, finibus id tellus. Duis malesuada dui ut dictum venenatis. Cras ultrices et mauris sit amet posuere.
-      </p>
+      Suspendisse scelerisque est non elit pretium malesuada. Nulla orci leo, sagittis eu congue et, scelerisque in sem. Quisque posuere urna non arcu vulputate varius. In cursus nibh id leo auctor scelerisque. Phasellus ut ullamcorper est. Aliquam eget nisi id metus efficitur tincidunt. Duis ante nulla, consequat a arcu id, vestibulum semper nisi. Mauris diam nisl, fermentum vel fringilla eu, finibus id tellus. Duis malesuada dui ut dictum venenatis. Cras ultrices et mauris sit amet posuere. </p>
     </div>
     <script>
     $(document).ready(function(){
