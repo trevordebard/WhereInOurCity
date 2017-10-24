@@ -9,7 +9,8 @@
 /*****LOGIN MODAL******/
 .loginmodal-container {
   padding: 40px; /*How far away the contents are from the border of the modal*/
-  width:500px; /*Width of modal*/
+  width:100%;
+  max-width:500px; /*Width of modal*/
   background-color: white; /*Background color of modal*/
   margin: 0 auto; /*Since we specified the width, this will make everything sit in the center of the modal*/
   border-radius: 4px; /*Rounded edges for border*/
@@ -23,7 +24,7 @@
   color:#247BA0; /*Color of the header*/
 }
 
-#loginSignUpSubmitBtn {
+#loginSubmitBtn {
   border-radius: 4px; /*Rounds button edges*/
   color: white; /*Text of submit*/
   background-color: #247BA0; /*Background color of button*/
@@ -37,11 +38,11 @@
   margin-top:10px; /*How far the submit button is away from the thing above it*/
 }
 
-#loginSignUpSubmitBtn:hover {
+#loginSubmitBtn:hover {
   background-color: #0A678F; /*Color of background when cursor is hovering on submit button*/
 }
 
-.loginSignUpText { /*Controls text and text box for username and password*/
+.loginText { /*Controls text and text box for username and password*/
   height: 50px; /*Height of text boxes*/
   font-size: 16px; /*Font size of placeholder text and text typed into box*/
   width: 100%; /*Takes up all space on modal while keeping padding*/
@@ -50,9 +51,11 @@
   padding: 0 10px; /*How far placeholder and actual typed text are away from the sides from the textbox, also affects where the text starts*/
   border: none; /*Border of text box*/
   border-bottom:1px solid #247BA0; /*Gives us only the bottom border*/
+  -webkit-border-radius:0;
+  border-radius:0;
 }
 
-.loginSignUpText:hover {
+.loginText:hover {
   border-bottom: 2px solid #0A678F; /*Adds a border when hovering over username and password text boxes*/
 }
 
@@ -64,10 +67,10 @@
   text-align: center;
   margin-top:20px;
 }
-#signUpLoginModalText{ /*Text underneath the hr that allowss the user to sign up from the login modal*/
+#loginModalText{ /*Text underneath the hr that allowss the user to sign up from the login modal*/
   text-align: center;
 }
-#loginSignUpModalHR{
+#loginModalHR{
   border:0.3px solid #247BA0; /*Changes the horizontal rule's thickness and color*/
 }
 

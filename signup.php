@@ -18,8 +18,10 @@
         width:auto;
       }
       #signUpContainer{
-        width:500px;
-        height:530px;
+        width:85%;
+        max-width:500px;
+        height:100%;
+        max-height:530px;
         background-color: white;
         margin: 0 auto;
         padding: 1px;
@@ -62,26 +64,15 @@
   			padding: 0 10px; /*How far placeholder and actual typed text are away from the sides from the textbox, also affects where the text starts*/
   		  border: none; /*Border of text box*/
   			border-bottom:1px solid #247BA0; /*Gives us only the bottom border*/
+        -webkit-border-radius:0;
+        border-radius:0;
+
   		}
   		.signUpText:hover {
   		  border-bottom: 2px solid #0A678F; /*Adds a border when hovering over username and password text boxes*/
   		}
       #yourCityText{
         margin-top:5px;
-      }
-
-      select {
-        padding: 10px;
-        max-width: 100%;
-        height: auto !important;
-        border: 1px solid #247BA0;
-        border-radius: 5px;
-        color: black;
-        font-size: 12px;
-        appearance: none; /* this is must */
-      }
-      select:hover{
-        border:1.2px solid #0A678F;
       }
     </style>
 
@@ -98,7 +89,7 @@
       <h1>Create an Account</h1>
       <form action="includes/signup-inc.php" method="POST">
         <input type="text" name="username" id="signUpUser" class="signUpText" placeholder="Username">
-        <input type="text" name="email" id="signUpEmal" class="signUpText" placeholder="Email">
+        <input type="text" name="email" id="signUpEmail" class="signUpText" placeholder="Email">
         <input type="password" name="password" id="signUpPass" class="signUpText" placeholder="Password">
         <button type="submit" name="signUpSubmitBtn" id="signUpSubmit" class="signUp">Sign up</button>
       </form>

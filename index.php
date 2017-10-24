@@ -10,13 +10,18 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style>
+    #cont-search-location{
+      width:75%;
+      max-width:600px;
+      margin-left:50%;
+      transform: translateX(-50%);
+    }
     #btn-choose-location {
-        border-color: white;
-        width: 600px;
+        border-color: #247BA0;
+        max-width:600px;
+        width:100%;
         background-color: #247BA0;
         font-family: helvetica, sans-serif;
-        margin-left:50%;
-        transform: translateX(-50%);
     }
     #btn-choose-location:hover {
       background-color: #0A678F;
