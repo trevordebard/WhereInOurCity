@@ -21,16 +21,7 @@
     #btn-choose-location:hover {
       background-color: #0A678F;
     }
-    /*****Underline Animation****/
-    .nav a {
-      color: black;
-      font-size: 15px;
-      font-weight: bold;
-      padding: 15px 10px;
-      font-family: helvetica, sans-serif;
-      margin-left: 1px;
-      text-decoration: none;
-    }
+
 
     /*************************/
     .space{
@@ -77,7 +68,7 @@
   </head>
   <body>
     <?php
-      if(isset($_SESSION['u_id'])){
+      if(isset($_SESSION['u_username'])){
         echo '<nav class="navbar navbar-default">
                 <div class="navbar-header">
                   <button type="button" class="navbar-toggle" id="collapsedCityNavbar" data-toggle="collapse" data-target="#cityNavbar">
@@ -89,11 +80,12 @@
                 </div>
                 <div class="collapse navbar-collapse" id="cityNavbar">
                   <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#" id="username" class="navbarText">'.$_SESSION[u_username].'</a></li>
+                    <li><a href="#ourMissionHeader" id="ourMissionBtn" class="underlineAnimate navbarText">Our Mission</a></li>
+                    <li><a href="#" id="contactUsBtn" class="underlineAnimate navbarText" data-toggle="modal" data-target="#contact-modal">Contact Us</a></li>
                     <li><form action="includes/logout.inc.php" method="POST">
                       <li><button type="submit" name="logoutBtn">Log Out</button></li>
                     </form></li>
-                    <li><a href="#ourMissionHeader" id="ourMissionBtn" class="underlineAnimate navbarText">Our Mission</a></li>
-                    <li><a href="#" id="contactUsBtn" class="underlineAnimate navbarText" data-toggle="modal" data-target="#contact-modal">Contact Us</a></li>
                   </ul>
                 </div>
               </nav>';
@@ -134,7 +126,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-body">
-            <a href="cityhome.php"><button class="btn btn-primary horizontal-center brBtn">Baton Rouge</button></a>
+            <a href="cityhome.php"><button class="btn btn-primary brBtn">Baton Rouge</button></a>
           </div>
         </div>
       </div>
