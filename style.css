@@ -113,3 +113,7 @@
 .nav li {
   display: inline;
 }
+
+.modal-open{ /*THIS FIXED A REALL DUMB PROBLEM ON IOS WHERE THE CURSOR OF A MODAL WOULDNT BE IN A TEXT BOX, IT WOULD BE BELOW IT*/
+  position:fixed;
+}
