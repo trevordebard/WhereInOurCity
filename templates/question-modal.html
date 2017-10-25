@@ -1,0 +1,36 @@
+<div class="modal fade" id="question-modal" tabindex="-1" role="dialog" aria-labelledby="askAQuestionTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h2 class="modal-title" id="askAQuestionText">What would you like to ask?</h2>
+        <p class="modal-title" id="askAQuestionText">Ask about events, shops, attractions, or whatever you want to know!</p>
+      </div>
+      <div class="modal-body">
+      <form>
+        <div class="form-group">
+          <label for="question-question" class="form-control-label askAQuestionTitle">Question:</label>
+          <input type="text" class="form-control" id="question-question">
+          <br>
+          <label for="question-description" class="form-control-label askAQuestionTitle">Description:</label>
+          <textarea class="form-control " id="question-description"></textarea>
+          <br>
+          <label for="question-category" class="form-control-label askAQuestionTitle">Category:</label>
+          <select class="selectpicker">
+            <option>Date Night</option>
+            <option>Italian</option>
+            <option>Family Friendly</option>
+            <option>Team Stats</option>
+          </select>
+        </div>
+      </form>
+      </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" id="askAQuestionCancelBtn" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" id="askAQuestionSubmitBtn">Ask The Locals</button>
+      </div>
+    </div>
+  </div>
+</div>
