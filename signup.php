@@ -18,25 +18,21 @@
         width:auto;
       }
       #signUpContainer{
-        width:85%;
-        max-width:500px;
-        height:100%;
-        max-height:530px;
-        background-color: white;
-        margin: 0 auto;
-        padding: 1px;
-        font-family: helvetica, sans-serif;
+        width:85%; /*Sets width for mobile devices*/
+        max-width:500px; /*The sign up container can never be bigger than 500px*/
+        height:100%; /*Sets width for mobile*/
+        max-height:530px; /*The height can never be bigger thaan 530px*/
+        background-color: white; /*Sets background color to white*/
+        margin: 0 auto; /*Centers container itself in the middle of the page*/
+        padding: 1px; /*How much space the content inside have between each other*/
+        font-family: helvetica, sans-serif; /*font*/
       }
       #signUpContainer h1{
         text-align: center; /*Centers the header*/
   		  font-size: 35px; /*Changes the size of the header*/
-  		  font-family: helvetica, sans-serif;
+  		  font-family: helvetica, sans-serif; /*font*/
   			color:#247BA0; /*Color of the header*/
-        padding-bottom: 5px;
-      }
-      #signUpContainer p{
-        color:black;
-        font-size:15px;
+        padding-bottom: 5px; /*How far the things below the header are from the header*/
       }
       #signUpSubmit {
   			border-radius: 4px; /*Rounds button edges*/
@@ -46,8 +42,6 @@
   		  font-size: 19px; /*Font size of the text on the button*/
   			border:none; /*Need this or as some dumb auto border, can do this with border:0 not sure which is better practice*/
   			width: 100%; /*Takes up all space on modal while keeping padding*/
-  		  display: block;
-  		  position: relative;
   			margin-top:80px; /*How far the submit button is away from the thing above it*/
   		}
 
@@ -64,16 +58,13 @@
   			padding: 0 10px; /*How far placeholder and actual typed text are away from the sides from the textbox, also affects where the text starts*/
   		  border: none; /*Border of text box*/
   			border-bottom:1px solid #247BA0; /*Gives us only the bottom border*/
-        -webkit-border-radius:0;
-        border-radius:0;
+        -webkit-border-radius:0; /*IOS likes to give random border radius so this fixes that problem*/
+        border-radius:0; /*Explicitly setting border radius to 0, see above line*/
 
   		}
   		.signUpText:hover {
   		  border-bottom: 2px solid #0A678F; /*Adds a border when hovering over username and password text boxes*/
   		}
-      #yourCityText{
-        margin-top:5px;
-      }
     </style>
 
   </head>
@@ -83,7 +74,6 @@
       <a class="navbar-brand" href="index.php">
         <img src="images/wiocLogo.png" id="wiocNavbarLogo" alt="">
       </a>
-      <!--Need to link this wioc logo back to index.html-->
   	</nav>
     <div id="signUpContainer">
       <h1>Create an Account</h1>
@@ -94,9 +84,5 @@
         <button type="submit" name="signUpSubmitBtn" id="signUpSubmit" class="signUp">Sign up</button>
       </form>
     </div>
-
-
   </body>
-
-
 </html>
