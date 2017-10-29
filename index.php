@@ -73,6 +73,8 @@
   </head>
   <body>
     <?php
+      include("templates/login-modal.html");
+      include("templates/contact-us-modal.html");
       if(isset($_SESSION['u_username'])){
         echo '<nav class="navbar navbar-default">
                 <div class="navbar-header">
@@ -136,10 +138,6 @@
         </div>
       </div>
     </div>
-    <?php
-      include("templates/login-modal.html");
-      include("templates/contact-us-modal.html")
-    ?>
 
     <div id="ourMissionText">
       <hr id="ourMissionHR" class="space">
