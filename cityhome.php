@@ -54,7 +54,7 @@
   <?php
     include("templates/login-modal.html");
     include("templates/contact-us-modal.html");
-<<<<<<< HEAD
+    include("templates/question-modal.html");
       if(isset($_SESSION['u_username'])){
         echo '<nav class="navbar navbar-default">
                 <a class="navbar-brand" href="cityhome.php">
@@ -84,9 +84,6 @@
         include("templates/main-navbar.html");
       }
     ?>
-=======
-    include("templates/question-modal.html");
-    ?>
   <div>
     <img src="images/BRBanner.png" id="BRBanner">
   </div>
@@ -95,8 +92,6 @@
       <a style="cursor: pointer; float: center;" data-toggle="modal" data-target="#question-modal"><button class="btn btn-primary btn-lg">ASK A QUESTION</button></a>
     </div>
     <div align="center" style="margin: 0 auto; width: 25%; text-align: center">
->>>>>>> efe0f7a55e85fd26319ecc8fb00db96bf947c1cb
-
       <a style="cursor: pointer;" data-toggle="modal" data-target="#myModal">Change City</a>
     </div>
   </div>
