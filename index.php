@@ -56,7 +56,6 @@
     </style>
   </head>
   <body>
-<<<<<<< HEAD
     <?php
       include("templates/login-modal.html");
       include("templates/contact-us-modal.html");
@@ -103,27 +102,6 @@
         </nav>';
       }
     ?>
-=======
-    <div class="nav">
-      <?php
-        if(isset($_SESSION['u_id'])){
-          echo '<ul class="pull-right">
-                  <form action="includes/logout.inc.php" method="POST">
-                    <li><button type="submit" name="logoutBtn" class="underlineAnimate">Log Out</button></li>
-                  </form>
-                </ul>';
-        }
-        else{
-          echo '<ul class="pull-right">
-                  <li><a href="signup.php" id="signUpBtn" class="underlineAnimate">Sign Up</a></li>
-                  <li><a href="#" id="loginBtn" class="underlineAnimate" data-toggle="modal" data-target="#login-modal">Log In</a></li>
-                  <li><a href="#ourMissionHeader" id="ourMissionBtn" class="underlineAnimate">Our Mission</a></li>
-          		    <li><a href="#" id="contactUsBtn" class="underlineAnimate" data-toggle="modal" data-target="#contact-modal">Contact Us</a></li>
-                </ul>';
-        }
-      ?>
-    </div>
->>>>>>> efe0f7a55e85fd26319ecc8fb00db96bf947c1cb
 
     <div id="logo-header" align="center">
       <img src="images/wiocLogo.png" style="width: 200px; height: 150px; margin-top: 5%;">
