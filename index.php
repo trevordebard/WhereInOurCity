@@ -4,33 +4,36 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style>
-    #cont-search-location{
-      width:75%;
-      max-width:600px;
-      margin-left:50%;
-      transform: translateX(-50%);
-    }
     #btn-choose-location {
-        border-color: #247BA0;
-        max-width:600px;
-        width:100%;
+        border-color: white;
+        width: 600px;
         background-color: #247BA0;
         font-family: helvetica, sans-serif;
+        margin-left:50%;
+        transform: translateX(-50%);
     }
     #btn-choose-location:hover {
       background-color: #0A678F;
     }
-
+    /*****Underline Animation****/
+    .nav a {
+      color: black;
+      font-size: 15px;
+      font-weight: bold;
+      padding: 15px 10px;
+      font-family: helvetica, sans-serif;
+      margin-left: 1px;
+      text-decoration: none;
+    }
 
     /*************************/
     .space{
-      margin-top: 460px;
+      margin-top: 35%;
     }
     .textCentered{
       text-align:center;
@@ -50,72 +53,28 @@
     #message-text {
       resize: vertical;
     }
-
-    .navbarText {
-      font-size: 15px;
-      font-weight: bold;
-      font-family: helvetica, sans-serif;
-      postion:relative;
-      top:-8px;
-    }
-    .nav.navbar-nav.navbar-right li a {
-      color: #464646;
-      margin-left:0;
-    }
-    .nav.navbar-nav.navbar-right li a:hover {
-      color: #000000;
-    }
-    .navbar-default{
-      background-color: white;
-      border:none;
-    }
     </style>
   </head>
   <body>
-    <?php
-      if(isset($_SESSION['u_username'])){
-        echo '<nav class="navbar navbar-default">
-                <div class="navbar-header">
-                  <button type="button" class="navbar-toggle" id="collapsedCityNavbar" data-toggle="collapse" data-target="#cityNavbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                  </button>
-                </div>
-                <div class="collapse navbar-collapse" id="cityNavbar">
-                  <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#" id="username" class="navbarText">'.$_SESSION[u_username].'</a></li>
-                    <li><a href="#ourMissionHeader" id="ourMissionBtn" class="underlineAnimate navbarText">Our Mission</a></li>
-                    <li><a href="#" id="contactUsBtn" class="underlineAnimate navbarText" data-toggle="modal" data-target="#contact-modal">Contact Us</a></li>
-                    <li><form action="includes/logout.inc.php" method="POST">
-                      <li><button type="submit" name="logoutBtn">Log Out</button></li>
-                    </form></li>
-                  </ul>
-                </div>
-              </nav>';
-      }
-      else{
-        echo '<nav class="navbar navbar-default">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" id="collapsedCityNavbar" data-toggle="collapse" data-target="#cityNavbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-          </div>
-          <div class="collapse navbar-collapse" id="cityNavbar">
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="signup.php" id="signUpBtn" class="underlineAnimate navbarText">Sign Up</a></li>
-              <li><a href="#" id="loginBtn" class="underlineAnimate navbarText" data-toggle="modal" data-target="#login-modal">Log In</a></li>
-              <li><a href="#ourMissionHeader" id="ourMissionBtn" class="underlineAnimate navbarText">Our Mission</a></li>
-              <li><a href="#" id="contactUsBtn" class="underlineAnimate navbarText" data-toggle="modal" data-target="#contact-modal">Contact Us</a></li>
-            </ul>
-          </div>
-        </nav>';
-      }
-    ?>
+    <div class="nav">
+      <?php
+        if(isset($_SESSION['u_id'])){
+          echo '<ul class="pull-right">
+                  <form action="includes/logout.inc.php" method="POST">
+                    <li><button type="submit" name="logoutBtn" class="underlineAnimate">Log Out</button></li>
+                  </form>
+                </ul>';
+        }
+        else{
+          echo '<ul class="pull-right">
+                  <li><a href="signup.php" id="signUpBtn" class="underlineAnimate">Sign Up</a></li>
+                  <li><a href="#" id="loginBtn" class="underlineAnimate" data-toggle="modal" data-target="#login-modal">Log In</a></li>
+                  <li><a href="#ourMissionHeader" id="ourMissionBtn" class="underlineAnimate">Our Mission</a></li>
+          		    <li><a href="#" id="contactUsBtn" class="underlineAnimate" data-toggle="modal" data-target="#contact-modal">Contact Us</a></li>
+                </ul>';
+        }
+      ?>
+    </div>
 
     <div id="logo-header" align="center">
       <img src="images/wiocLogo.png" style="width: 200px; height: 150px; margin-top: 5%;">
@@ -131,7 +90,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-body">
-            <a href="cityhome.php"><button class="btn btn-primary brBtn">Baton Rouge</button></a>
+            <a href="cityhome.php"><button class="btn btn-primary horizontal-center brBtn">Baton Rouge</button></a>
           </div>
         </div>
       </div>
