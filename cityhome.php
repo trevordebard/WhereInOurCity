@@ -36,6 +36,11 @@
       height:60px;
       width:auto;
     }
+    #BRBanner {
+      position: relative;
+      top:-15px;
+      width: 100%;
+    }
     .list-group-item {
       margin: 3px;
       margin-top: 0px;
@@ -51,17 +56,18 @@
     include("templates/login-modal.html");
     include("templates/contact-us-modal.html");
     include("templates/question-modal.html");
-  ?>
+    ?>
   <div>
-    <div style="float:right; margin-right:5%">
+    <img src="images/BRBanner.png" id="BRBanner">
+  </div>
+  <div>
+    <div style="float:right; margin-right:9%">
       <a style="cursor: pointer; float: center;" data-toggle="modal" data-target="#question-modal"><button class="btn btn-primary btn-lg">ASK A QUESTION</button></a>
     </div>
     <div align="center" style="margin: 0 auto; width: 25%; text-align: center">
-      <h3>Baton Rouge</h3>
-      <hr style="float: center; margin: 3px; border-top: 0.9px solid #959494;">
-      <a style="cursor: pointer;" data-toggle="modal" data-target="#myModal">Change city</a>
-    </div>
 
+      <a style="cursor: pointer;" data-toggle="modal" data-target="#myModal">Change City</a>
+    </div>
   </div>
 
   <div class="modal fade" id="myModal" role="dialog">
@@ -74,8 +80,8 @@
        </div>
      </div>
   </div>
-  <div>
-    <div style="width: 64%; float:left; margin: 2%; border-radius:5px";>
+  <div style="margin-top: 4%;">
+    <div style="width: 64%; float:left; margin: 2%; margin-top: 0%; border-radius:5px";>
       <div class="list-group">
         <a href="#" class="list-group-item" >
           <h2>Does anyone know where I can download TeamStats?</h2>
@@ -101,7 +107,7 @@
       </div>
     </div>
     <div>
-      <div style="width: 30%; float:right; background-color: #ff6347; margin-top:2%; margin-right: 1%;  border-radius: 5px";>
+      <div style="width: 30%; float:right; background-color: #ff6347; margin-right: 1%;  border-radius: 5px";>
         <h3>Too many questions? Try narrowing down what you see!</h3>
         <div align="center">
           <select class="selectpicker">

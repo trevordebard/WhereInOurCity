@@ -9,25 +9,23 @@
         <p class="modal-title" id="contactUsNewMessageText">We love feedback. Send us some.</p>
       </div>
       <div class="modal-body">
-      <form>
-        <div class="form-group">
-          <label for="sender-name" class="form-control-label contactUsTitle">Name:</label>
-          <input type="text" class="form-control" id="sender-name">
-          <br>
-          <label for="sender-email" class="form-control-label contactUsTitle">Email:</label>
-          <input type="text" class="form-control" id="sender-email">
-          <br>
-          <label for="subject-name" class="form-control-label contactUsTitle">Subject:</label>
-          <input type="text" class="form-control " id="subject-name">
-          <br>
-          <label for="message-text" class="form-control-label contactUsTitle">Message:</label>
-          <textarea class="form-control " id="message-text"></textarea>
-        </div>
-      </form>
-      </div>
-        <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" id="contactUsCloseBtn" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" id="contactUsSubmitBtn">Submit</button>
+        <form method="post" action="mailto:loganserio@gmail.com" enctype="text/plain">
+          <div class="form-group">
+            <label for="sender-name" class="form-control-label contactUsTitle">Name:</label><br>
+            <input type="text" class="form-control" name="Name" id="sender-name">
+            <br>
+            <label for="sender-email" class="form-control-label contactUsTitle">E-mail:</label><br>
+            <input type="text" class="form-control" name="E-mail" id="sender-email">
+            <br>
+
+            <label for="message-text" class="form-control-label contactUsTitle">Message:</label><br>
+            <textarea class="form-control" name="Message" id="message-text"></textarea>
+            <div class="modal-footer">
+              <input data-dismiss="modal" class="btn" type="button" value="Cancel">
+              <input class="btn btn-primary" type="submit" value="Submit">
+            </div>
+          </div>
+        </form>
       </div>
     </div>
   </div>

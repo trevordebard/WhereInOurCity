@@ -1,3 +1,13 @@
+<div class="modal fade" id="submitQuestion" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+     <div class="modal-content">
+       <div class="modal-body">
+         <h1>Sike! Did you really think we'd let someone like you ask a question??? Go back to TeamStats kid!</h1>
+       </div>
+     </div>
+   </div>
+</div>
 <div class="modal fade" id="question-modal" tabindex="-1" role="dialog" aria-labelledby="askAQuestionTitle" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -14,7 +24,8 @@
           <label for="question-question" class="form-control-label askAQuestionTitle">Question:</label>
           <input type="text" class="form-control" id="question-question">
           <br>
-          <label for="question-description" class="form-control-label askAQuestionTitle">Description:</label>
+          <label for="question-description" class="form-control-label askAQuestionTitle">Description: (Optional)</label>
+          <p>Use this to add clarity to your question if you think it might be confusing.</p>
           <textarea class="form-control " id="question-description"></textarea>
           <br>
           <label for="question-category" class="form-control-label askAQuestionTitle">Category:</label>
@@ -29,7 +40,7 @@
       </div>
         <div class="modal-footer">
         <button type="button" class="btn btn-secondary" id="askAQuestionCancelBtn" data-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-primary" id="askAQuestionSubmitBtn">Ask The Locals</button>
+        <a data-toggle="modal" data-target="#submitQuestion"><button type="button" class="btn btn-primary" id="askAQuestionSubmitBtn">Ask The Locals</button></a>
       </div>
     </div>
   </div>
