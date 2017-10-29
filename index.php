@@ -53,6 +53,24 @@
     #message-text {
       resize: vertical;
     }
+    .navbarText {
+      font-size: 15px;
+      font-weight: bold;
+      font-family: helvetica, sans-serif;
+      postion:relative;
+      top:-8px;
+    }
+    .nav.navbar-nav.navbar-right li a {
+      color: #464646;
+      margin-left:0;
+    }
+    .nav.navbar-nav.navbar-right li a:hover {
+      color: #000000;
+    }
+    .navbar-default{
+      background-color: white;
+      border:none;
+    }
     </style>
   </head>
   <body>
