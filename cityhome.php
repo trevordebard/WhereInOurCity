@@ -50,7 +50,7 @@
     /*Also couldnt figure out how to change background color of the navbar when the webpage is half the computer screen*/
   </style>
 </head>
-<body>
+<body style="width: 100%">
   <?php
     include("templates/main-navbar.html");
     include("templates/login-modal.html");

@@ -1,7 +1,6 @@
 .horizontal-center {
   transform: translate(-50%, -50%);
 }
-
 .brBtn {
   margin-top: 1%;
 }
@@ -9,8 +8,8 @@
 /*****LOGIN MODAL******/
 .loginmodal-container {
   padding: 40px; /*How far away the contents are from the border of the modal*/
-  width:100%;
-  max-width:500px; /*Width of modal*/
+  width:100%; /*Width of modal, helps make mobile firendly*/
+  max-width:500px; /*Width of modal cannot be bigger than 500px no matter how far you stretch the screen*/
   background-color: white; /*Background color of modal*/
   margin: 0 auto; /*Since we specified the width, this will make everything sit in the center of the modal*/
   border-radius: 4px; /*Rounded edges for border*/
@@ -23,7 +22,6 @@
   font-family: helvetica, sans-serif;
   color:#247BA0; /*Color of the header*/
 }
-
 #loginSubmitBtn {
   border-radius: 4px; /*Rounds button edges*/
   color: white; /*Text of submit*/
@@ -32,16 +30,12 @@
   font-size: 19px; /*Font size of the text on the button*/
   border:none; /*Need this or as some dumb auto border, can do this with border:0 not sure which is better practice*/
   width: 100%; /*Takes up all space on modal while keeping padding*/
-  display: block;
   margin-bottom: 10px; /*How far the button is away from the thing below it*/
-  position: relative;
   margin-top:10px; /*How far the submit button is away from the thing above it*/
 }
-
 #loginSubmitBtn:hover {
   background-color: #0A678F; /*Color of background when cursor is hovering on submit button*/
 }
-
 .loginText { /*Controls text and text box for username and password*/
   height: 50px; /*Height of text boxes*/
   font-size: 16px; /*Font size of placeholder text and text typed into box*/
@@ -51,31 +45,31 @@
   padding: 0 10px; /*How far placeholder and actual typed text are away from the sides from the textbox, also affects where the text starts*/
   border: none; /*Border of text box*/
   border-bottom:1px solid #247BA0; /*Gives us only the bottom border*/
-  -webkit-border-radius:0;
-  border-radius:0;
+  -webkit-border-radius:0; /*IOS likes to give random border radius so this fixes that problem*/
+  border-radius:0;/*Explicitly setting border radius to 0, see above line*/
 }
-
 .loginText:hover {
   border-bottom: 2px solid #0A678F; /*Adds a border when hovering over username and password text boxes*/
 }
-
 .loginmodal-container a{ /*Forgot Password font, sign up font and anything else that uses the tag a in the login modal*/
   color: #247BA0; /*Color of "Change Password"*/
   font-size:13px; /*Size of "Change Password"*/
 }
 #forgotPasswordText{ /*Paragraph tag that is used to center and move the forgot password text slightly down*/
-  text-align: center;
-  margin-top:20px;
+  text-align: center; /*Centers the text in the middle of the modal*/
+  margin-top:20px;/*How far everything above the text is from the text*/
 }
-#loginModalText{ /*Text underneath the hr that allowss the user to sign up from the login modal*/
-  text-align: center;
+#loginModalText{ /*Text underneath the hr that allows the user to sign up from the login modal*/
+  text-align: center; /*centers the text in middle of modal*/
 }
 #loginModalHR{
   border:0.3px solid #247BA0; /*Changes the horizontal rule's thickness and color*/
 }
+.modal-open{ /*THIS FIXED A REAL DUMB PROBLEM ON IOS WHERE THE CURSOR OF A MODAL WOULDNT BE IN A TEXT BOX, IT WOULD BE BELOW IT*/
+  position:fixed;
+}
 
-
-/********Contact Us Modal**********/
+/*****Contact Us Modal*****/
 #contactUsCloseBtn:hover{
 	background-color:#C9C9C9; /*Changes background color of "Close" button when the cursor is hovering over it*/
 }
@@ -86,30 +80,25 @@
   background-color: #0A678F; /*Changes background color of "Submit" button when the cursor is hovering over it*/
 }
 
-/*****Underline Animation****/
-.underlineAnimate{
-  display: inline;
-  position: relative;
-  overflow: hidden;
-  top: 6px;
-}
+/*****Underline Animation*****/
 .underlineAnimate:after {
-  content: "";
-  background:#247BA0;
-  position: absolute;
-  left: 0;
-  right: 100%;
-  bottom: 5px;
-  height: 4px;
-  transition-property: top bottom;
-  transition-duration: 0.4s;
-  transition-timing-function: ease-out;
+  content: ""; /*Insert content that is blank, underline doesnt appear without this*/
+  background:#247BA0; /*Sets the color of the underline*/
+  position: absolute; /*Makes the underline never appear in a different spot, stays exactly where it is*/
+  left: 0; /*Makes the underline invisible when the cursor isnt hovering over the text*/
+  right: 100%; /*Makes the underline extend the entire length of the text*/
+  bottom: 5px; /*How close the underline is to the text above it*/
+  height: 4px; /*Adjusts how thick the underline is*/
+  transition-property: top bottom; /*The style in which the underline appears*/
+  transition-duration: 0.4s; /*Amount of time the underline takes to fully extend*/
+  transition-timing-function: ease-out; /*The style in which the underline disappears*/
 }
 .underlineAnimate:hover:after,
 .underlineAnimate:focus:after,
 .underlineAnimate:active:after {
-  right: 0;
+  right: 0; /*Returns the animation to its starting point, has to be set to zero or entire animation doesnt work*/
 }
-.nav li {
-  display: inline;
+
+.modal-open {
+  position: fixed;
 }

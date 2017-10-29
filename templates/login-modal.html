@@ -1,5 +1,6 @@
 <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
+<<<<<<< HEAD
     <div class="loginmodal-container">
       <!--<img src="images/wiocLogo.png" style="width: 20px; height: 15px;">-->
       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -17,7 +18,25 @@
       <hr id="loginSignUpModalHR">
       <div>
         <p id="signUpLoginModalText">Don't have an account? <a href="signup.php">Sign Up</a></p>
+=======
+      <div class="loginmodal-container">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h1>Log in to Your Account</h1><br>
+        <form action="includes/login.inc.php" method="POST">
+          <input type="text" name="loginUsername" class="loginText" placeholder="Username">
+          <input type="password" name="loginPassword" class="loginText" placeholder="Password">
+          <input type="submit" name="loginSubmitBtn" id="loginSubmitBtn" class="login" value="Login">
+        </form>
+        <div>
+          <p id="forgotPasswordText"><a href="#">Forgot Password?</a></p>
+        </div>
+        <hr id="loginModalHR">
+        <div>
+          <p id="loginModalText">Don't have an account? <a href="signup.php">Sign Up</a></p>
+        </div>
+>>>>>>> refs/remotes/origin/master
       </div>
     </div>
-  </div>
   </div>
