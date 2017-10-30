@@ -89,7 +89,7 @@
                 </div>
                 <div class="collapse navbar-collapse" id="cityNavbar">
                   <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#" id="username" class="navbarText">'.$_SESSION[u_username].'</a></li>
+                    <li><a href="#" id="username" class="navbarText">'.$_SESSION['u_username'].'</a></li>
                     <li><a href="#ourMissionHeader" id="ourMissionBtn" class="underlineAnimate navbarText">Our Mission</a></li>
                     <li><a href="#" id="contactUsBtn" class="underlineAnimate navbarText" data-toggle="modal" data-target="#contact-modal">Contact Us</a></li>
                     <li><form action="includes/logout.inc.php" method="POST">

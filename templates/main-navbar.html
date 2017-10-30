@@ -30,3 +30,16 @@
     </ul>
   </div>
 </nav>
+<script>
+  $("#inputSearchBar").focus(function() {
+    $("#inputSearchBar").animate({
+      width: "300px"
+    });
+  });
+  $("#inputSearchBar").focusout(function() {
+    console.log("test");
+    $("#inputSearchBar").animate({
+      width: "100px",
+    });
+  });
+</script>
