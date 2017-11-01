@@ -13,7 +13,8 @@ body {
 /*****LOGIN MODAL******/
 .loginmodal-container {
   padding: 40px; /*How far away the contents are from the border of the modal*/
-  width:500px; /*Width of modal*/
+  width:100%;
+  max-width:500px; /*Width of modal*/
   background-color: white; /*Background color of modal*/
   margin: 0 auto; /*Since we specified the width, this will make everything sit in the center of the modal*/
   border-radius: 4px; /*Rounded edges for border*/
@@ -54,6 +55,8 @@ body {
   padding: 0 10px; /*How far placeholder and actual typed text are away from the sides from the textbox, also affects where the text starts*/
   border: none; /*Border of text box*/
   border-bottom:1px solid #247BA0; /*Gives us only the bottom border*/
+  -webkit-border-radius:0;
+  border-radius:0;
 }
 
 .loginText:hover {
