@@ -90,23 +90,16 @@
   <div>
     <div style="width: 64%; float:left; margin: 2%; border-radius:5px";>
       <div class="list-group">
-        <a href="questionPage.php" class="list-group-item" >
-          <h2>Does anyone know where I can download TeamStats?</h2>
-          <p>I found this fantastic app called TeamStats last May but I can no longer find it on the Google Play Store.</p>
-          <div>
-            <button class="btn">Helpful?</button>
-          </div>
-        </a>
-        <a href="#" class="list-group-item">
-          <h2>Can someone help me find my son Chet Rodrigue?</h2>
-          <p>He was last seen talking about fantasy football</p>
-          <div>
-            <button class="btn">Helpful?</button>
-          </div>
-        </a>
         <a href="#" class="list-group-item">
           <h2>Example Question</h2>
           <p>This is an example description</p>
+          <div>
+            <button class="btn">Helpful?</button>
+          </div>
+        </a>
+        <a href="questionPage.php" class="list-group-item" >
+          <h2>Does anyone know where I can download TeamStats?</h2>
+          <p>I found this fantastic app called TeamStats last May but I can no longer find it on the Google Play Store.</p>
           <div>
             <button class="btn">Helpful?</button>
           </div>
