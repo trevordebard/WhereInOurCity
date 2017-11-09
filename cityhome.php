@@ -42,6 +42,7 @@
       top:-15px;
       width: 100%;
     }
+
     .list-group-item {
       margin: 3px;
       margin-top: 0px;
@@ -56,7 +57,6 @@
     include("templates/login-modal.html");
     include("templates/contact-us-modal.html");
     include("templates/question-modal.html");
-    include("includes/test.inc.php");
        if(isset($_SESSION['u_username'])){
          include("templates/logged-in-cityhome-navbar.php");
        }
@@ -91,6 +91,9 @@
   <div>
     <div style="width: 64%; float:left; margin: 2%; border-radius:5px";>
       <div class="list-group">
+        <?php
+          include("includes/retrieve-questions.inc.php");
+        ?>
       </div>
     </div>
     <div>
