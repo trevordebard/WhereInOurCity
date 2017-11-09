@@ -12,13 +12,15 @@
     include("templates/login-modal.html");
     include("templates/contact-us-modal.html");
     include("templates/question-modal.html");
+    include("includes/dbh.php");
+    $query = "SELECT posts_question, posts_description FROM T_Posts WHERE posts_id=".$_GET['id']."";
+    $results = mysqli_query($conn, $query);
+    $row = mysqli_fetch_assoc($results);
+    echo '<h2 align="center">'.$row['posts_question'].'</h2>';
+    echo '<p align="center">'.$row['posts_description'].'</p>';
   ?>
   <div id="question-container">
-    <div id="question">
-      <h3>This is a question</h3>
-    </div>
-    <div id="question-description">
-      <h5>This is the question description</h5>
+
   </div>
 </body>
 </html>

@@ -9,7 +9,7 @@
   else {
     while ($row = mysqli_fetch_assoc($results)) {
       echo
-        '<a href="questionhome.php" class="list-group-item  list-group-item-action flex-column align-items-start">
+        '<a href="questionhome.php?id='.$row['posts_id'].'" class="list-group-item  list-group-item-action flex-column align-items-start">
           <div class="d-flex w-100 justify-content-between">
             <h2>'.$row['posts_question'].'</h2>
             <p>'.$row['posts_description'].'</p>
