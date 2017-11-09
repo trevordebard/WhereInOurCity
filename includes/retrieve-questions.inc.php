@@ -1,6 +1,6 @@
 <?php
   include 'dbh.php';
-  $query = "SELECT * FROM T_Posts";
+  $query = "SELECT * FROM T_Posts ORDER BY posts_id DESC";
   $results = mysqli_query($conn,$query);
   $resultCheck = mysqli_num_rows($results);
   if($resultCheck < 1){
