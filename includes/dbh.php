@@ -1,9 +1,9 @@
 <?php
 
 $dbServername = "localhost";
-$dbUsername = "dbwiocad";
-$dbPassword = "Wukr+ezc";
-$dbName = "WIOC";
+$dbUsername = "root";
+$dbPassword = "";
+$dbName = "wioc";
 
 $conn = mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName);
 
