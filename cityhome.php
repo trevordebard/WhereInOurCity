@@ -56,6 +56,7 @@
     include("templates/login-modal.html");
     include("templates/contact-us-modal.html");
     include("templates/question-modal.html");
+    include("includes/test.inc.php");
        if(isset($_SESSION['u_username'])){
          include("templates/logged-in-cityhome-navbar.php");
        }
@@ -90,20 +91,6 @@
   <div>
     <div style="width: 64%; float:left; margin: 2%; border-radius:5px";>
       <div class="list-group">
-        <a href="#" class="list-group-item">
-          <h2>Example Question</h2>
-          <p>This is an example description</p>
-          <div>
-            <button class="btn">Helpful?</button>
-          </div>
-        </a>
-        <a href="questionPage.php" class="list-group-item" >
-          <h2>Does anyone know where I can download TeamStats?</h2>
-          <p>I found this fantastic app called TeamStats last May but I can no longer find it on the Google Play Store.</p>
-          <div>
-            <button class="btn">Helpful?</button>
-          </div>
-        </a>
       </div>
     </div>
     <div>
