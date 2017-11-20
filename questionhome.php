@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 <html>
 <head>
   <link rel="stylesheet" type="text/css" href="style.css">
@@ -22,8 +25,7 @@
       margin-top: 2%;
     }
     #post-comment-container {
-      margin-bottom: 15px;
-      display: block;
+      margin-bottom: 50px;
     }
     #comment-dropdown {
       text-decoration: none;
@@ -36,19 +38,30 @@
     }
     #comment-textarea {
       resize: vertical;
-      margin: 10px;
-      width: 85%;
+      width: 100%;
+      min-height: 100px;
+      margin-bottom: 10px;
     }
     #commment-form-containter {
-      background-color: #F3F7FF;
       width: 100%;
     }
+
     #glyph-up {
       display: none;
     }
     #submit-comment {
+      background-color: transparent;
+      border: 1px solid #828181;
       float: right;
-      margin-right: 15%;
+    }
+    #submit-comment:hover {
+      background-color: #E6EDFA;
+    }
+    #question-hr {
+      border: .84px solid #BCBBBB;
+    }
+    .view-replies {
+      background-color: transparent;
     }
     .display-none {
       display: none;
@@ -58,7 +71,6 @@
     }
 
     .comment-lgi:hover {
-      border-color: #247ba0;
       border: 2px solid #247ba0;
     }
 
@@ -66,79 +78,100 @@
       padding: 10px;
       margin-bottom: 5px;
     }
-
+    .comment-reply {
+      padding: 10px;
+      margin-bottom: 5px;
+      width: 85%;
+      margin-left: 11%;
+    }
+    .comment-reply:hover {
+      border: 2px solid #DB2B39;
+    }
+    .comment-hr {
+      width: 97%;
+      border: .84px solid #BCBBBB;
+      margin-bottom: 8px;
+    }
     .sidebar-container{
       width: 33%;
       position: relative;
       text-align: center;
       float: right;
     }
-    hr {
-      border: .84px solid #BCBBBB;
+    .comment-btn-container {
+      margin-left: 1.5%;
+      margin-bottom: 5px;
     }
+    .reply-textarea {
+      width: 98%;
+      margin-bottom: 35px;
+      resize: vertical;
+      min-height: 100px;
+    }
+
     p {
       font-size: 16px;
-    }
-    .wrap-text {
-      overflow-wrap: break-word;
-      word-wrap: break-word;
     }
   </style>
 </head>
 <body>
 
   <?php
-    include("templates/main-navbar.html");
-    include("templates/login-modal.html");
-    include("templates/contact-us-modal.html");
-    include("templates/question-modal.html");
+
+  include("templates/login-modal.html");
+  include("templates/contact-us-modal.html");
+  include("templates/question-modal.html");
+   if(isset($_SESSION['u_username'])){
+     include("templates/logged-in-cityhome-navbar.php");
+   }
+   else{
+     include("templates/main-navbar.html");
+   }
+
     include("includes/dbh.php");
     $query = "SELECT posts_question, posts_description FROM T_Posts WHERE posts_id=".$_GET['id']."";
+    $_SESSION['post_id'] = $_GET['id'];
     $results = mysqli_query($conn, $query);
     $row = mysqli_fetch_assoc($results);
     echo '<div class="sidebar-container"></div>';
     echo '<div id="quest-comment-container"><div id="question-container"><h2 id="question" class="wrap-text">'.$row['posts_question'].'</h2>';
-    echo '<p id="question-description" class="wrap-text">'.$row['posts_description'].'</p><hr></div>';
+    echo '<p id="question-description" class="wrap-text">'.$row['posts_description'].'</p><hr id="question-hr"></div>';
   ?>
   <div>
   </div>
     <div id="post-comment-container">
-      <a id="comment-dropdown" href="#">
+      <a id="comment-dropdown">
         <span id="glyph-down" class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
         <span id="glyph-up" class="glyphicon glyphicon-menu-up" aria-hidden="true"></span>
         Comment</a>
-      <div id="commment-form-containter" class="display-none">
-        <form>
-          <textarea id="comment-textarea" class="form-control"></textarea>
-          <input id="submit-comment" type="button" class="btn" value="Post comment">
+      <div id="commment-form-containter">
+        <form action="includes/post-comment.inc.php" method="POST">
+          <textarea id="comment-textarea" name="comment-textarea" class="form-control"></textarea>
+          <input id="commentSubmitBtn" name="commentSubmitBtn" type="submit" class="btn" value="Post comment">
         </form>
       </div>
     </div>
 
-    <a href="#" class="list-group-item  list-group-item-action comment-lgi wrap-text">
-      <div>
-        <h5>username</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h3>
-      </div>
-    </a>
-    <a href="#" class="list-group-item list-group-item-action comment-lgi wrap-text">
-      <div>
-        <h5>username</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h3>
-      </div>
-    </a>
-    <a href="#" class="list-group-item list-group-item-action comment-lgi wrap-text">
-      <div>
-        <h5>username</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h3>
-      </div>
-    </a>
+    <ul class="list-group">
+      <?php
+          include("includes/retrieve-comments.inc.php");
+       ?>
+    </ul>
   </div>
   <script>
     $("#comment-dropdown").click(function() {
-      $("#commment-form-containter").toggleClass('display-inline-block display-none');
-      $("#glyph-up").toggle();
-      $("#glyph-down").toggle();
+      $("#commment-form-containter").toggleClass('display-none');
+      $(this).children(".glyphicon").toggle();
+    });
+
+    $(".view-replies").click(function() {
+      console.log($(this).parent().next().children());
+      $(this).parent().next().children().toggleClass('display-none');
+    });
+
+    $(".reply-comment").click(function() {
+      console.log($(this));
+      $(this).parent().siblings(".reply-textarea").toggleClass('display-none');
     })
   </script>
 </body>
