@@ -147,3 +147,7 @@ body {
   height:60px;
   width:auto;
 }
+.wrap-text {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
