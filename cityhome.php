@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 
   <style>
     /******Navbar*******/
@@ -42,6 +43,7 @@
       top:-15px;
       width: 100%;
     }
+
     .list-group-item {
       margin: 3px;
       margin-top: 0px;
@@ -90,20 +92,9 @@
   <div>
     <div style="width: 64%; float:left; margin: 2%; border-radius:5px";>
       <div class="list-group">
-        <a href="#" class="list-group-item">
-          <h2>Example Question</h2>
-          <p>This is an example description</p>
-          <div>
-            <button class="btn">Helpful?</button>
-          </div>
-        </a>
-        <a href="questionPage.php" class="list-group-item" >
-          <h2>Does anyone know where I can download TeamStats?</h2>
-          <p>I found this fantastic app called TeamStats last May but I can no longer find it on the Google Play Store.</p>
-          <div>
-            <button class="btn">Helpful?</button>
-          </div>
-        </a>
+        <?php
+          include("includes/retrieve-questions.inc.php");
+        ?>
       </div>
     </div>
     <div>
@@ -122,6 +113,42 @@
       </div>
     </div>
   </div>
+  <script>
+    var start = 0;
+    var limit = 5;
+    var reachedMax = false;
 
+    $(window).scroll(function () {
+      if ($(window).scrollTop() == $(document).height() - $(window).height())
+        fillPage();
+    });
+
+    $(document).ready(function() {
+        fillPage();
+    });
+    function fillPage() {
+      if (reachedMax)
+        return;
+
+      $.ajax({
+        url: 'includes/retrieve-questions.inc.php',
+        method: 'POST',
+        dataType: 'text',
+        data: {
+          fillPage: 1,
+          start: start,
+          limit: limit
+        },
+        success: function(response) {
+          if (response == "reachedMax")
+            reachedMax = true;
+          else {
+            start += limit;
+            $(".list-group").append(response);
+          }
+        }
+      });
+    }
+  </script>
 </body>
 </html>
