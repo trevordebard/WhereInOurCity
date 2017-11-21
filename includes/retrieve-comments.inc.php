@@ -4,7 +4,7 @@
   $results = mysqli_query($conn, $query);
   $resultCheck = mysqli_num_rows($results);
   if($resultCheck < 1){
-    echo 'helo';
+
   }
   else {
     while ($row = mysqli_fetch_assoc($results)) {
@@ -19,23 +19,15 @@
           <div class="comment-btn-container">
             <a><span class="glyphicon glyphicon-share-alt reply-comment" aria-hidden="true"></span> Reply</a>
             <a style="margin-left: 20px;" class="view-replies"><span id="glyph-down" class="glyphicon glyphicon-menu-down" aria-hidden="true"></span> View replies</a>
-            <textarea class="reply-textarea form-control display-none"></textarea>
           </div>
-          <ul class="list-group">
-            <li class="list-group-item comment-reply display-none wrap-text">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </li>
-            <li class="list-group-item comment-reply display-none wrap-text">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </li>
-            <li class="list-group-item comment-reply display-none wrap-text">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </li>
-            <li class="list-group-item comment-reply display-none wrap-text">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </li>
-          </ul>
-        </li>';
+          <form class="reply-form" action="includes/post-reply.inc.php" class="display-none" method="POST">
+            <textarea name="reply-textarea" class="reply-textarea form-control"></textarea>
+            <input type="text" class="display-none" name="parent_id" value="'.$row["comments_id"].'"/>
+            <input type="submit" name="commentReplyBtn" class="btn" value="Post Reply">
+          </form><ul>';
+          $id = $row['comments_id'];
+          include("includes/retrieve-replies.inc.php");
+        echo '</ul></li>';
     }
   }
 ?>

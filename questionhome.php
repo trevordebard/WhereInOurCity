@@ -104,9 +104,9 @@
     }
     .reply-textarea {
       width: 98%;
-      margin-bottom: 35px;
       resize: vertical;
       min-height: 100px;
+      margin-top: 5px;
     }
 
     p {
@@ -165,13 +165,11 @@
     });
 
     $(".view-replies").click(function() {
-      console.log($(this).parent().next().children());
-      $(this).parent().next().children().toggleClass('display-none');
+      $(this).parent().next().next().children(".comment-reply").toggleClass('display-none');
     });
 
     $(".reply-comment").click(function() {
-      console.log($(this));
-      $(this).parent().siblings(".reply-textarea").toggleClass('display-none');
+      $(this).parent().parent().next(".reply-form").toggleClass('display-none');
     })
   </script>
 </body>
