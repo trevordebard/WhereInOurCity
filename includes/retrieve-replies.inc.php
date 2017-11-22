@@ -6,16 +6,16 @@
   $results1 = mysqli_query($conn,$leftJoinQuery);
   $resultCheck1 = mysqli_num_rows($results1);
   if($resultCheck1 < 1){
-    echo 'helo';
   }
   else {
     while ($row1 = mysqli_fetch_assoc($results1)) {
       $reply = $row1['replies_reply'];
+      echo '<script>console.log("'.$reply.'")</script>';
       $username1 = $row1['users_username'];
       echo
         '<li class="list-group-item comment-reply display-none wrap-text">
           <h5>'.$username1.'</h5>
-          '.$reply.'
+          '.($reply==null ? 'Be the first to reply"' : $reply).'
           </li>';
     }
   }

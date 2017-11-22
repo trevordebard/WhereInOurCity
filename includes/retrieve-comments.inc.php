@@ -20,7 +20,7 @@
             <a><span class="glyphicon glyphicon-share-alt reply-comment" aria-hidden="true"></span> Reply</a>
             <a style="margin-left: 20px;" class="view-replies"><span id="glyph-down" class="glyphicon glyphicon-menu-down" aria-hidden="true"></span> View replies</a>
           </div>
-          <form class="reply-form" action="includes/post-reply.inc.php" class="display-none" method="POST">
+          <form class="reply-form display-none" action="includes/post-reply.inc.php" method="POST">
             <textarea name="reply-textarea" class="reply-textarea form-control"></textarea>
             <input type="text" class="display-none" name="parent_id" value="'.$row["comments_id"].'"/>
             <input type="submit" name="commentReplyBtn" class="btn" value="Post Reply">
