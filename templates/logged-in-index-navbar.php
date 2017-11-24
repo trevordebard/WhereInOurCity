@@ -12,8 +12,9 @@ echo '<nav class="navbar navbar-default">
     <ul class="nav navbar-nav navbar-right">
       <li class="dropdown"><a href="#" id="drop1" data-toggle="dropdown" class="dropdown-toggle underlineAnimate navbarText" role="button">'.$_SESSION['u_username'].'<b class="caret"></b></a>
           <ul role="menu" class="dropdown-menu" aria-labelledby="drop1">
-              <li role="presentation"><a href="#" role="menuitem">Profile</a></li>
-              <li role="presentation"><a href="#" role="menuitem">Log Out</a></li>
+            <li role="presentation"><a href="profilePage.php" role="menuitem">Profile</a></li>
+            <li role="presentation"><a href="#" role="menuitem">Notifications</a></li>
+            <li role="presentation"><a href="#" role="menuitem">Log Out</a></li>
           </ul>
       </li>
       <li><a href="#ourMissionHeader" id="ourMissionBtn" class="underlineAnimate navbarText">Our Mission</a></li>
