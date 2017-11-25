@@ -1,3 +1,4 @@
+<!--Comments incomplete-->
 <?php
   session_start();
 ?>
@@ -38,12 +39,14 @@
       height:60px;
       width:auto;
     }
+    /*Puts the Baton Rouge Banner underneath the navbar*/
     #BRBanner {
       position: relative;
       top:-15px;
       width: 100%;
     }
 
+    /*Style for forming the boxes that house the the questions*/
     .list-group-item {
       margin: 3px;
       margin-top: 0px;
@@ -55,21 +58,27 @@
 </head>
 <body style="width: 100%">
   <?php
+    /*Imports the login-modal, contact-us-modal, and question-modal into the file so that they can be called upon later*/
     include("templates/login-modal.html");
     include("templates/contact-us-modal.html");
     include("templates/question-modal.html");
-       if(isset($_SESSION['u_username'])){
+
+      /*If the session variable u_username is set (i.e. the user is logged in), then include the navbar that shows the
+      users username. Else import the navbar for a not logged in user*/
+      if(isset($_SESSION['u_username'])){
          include("templates/logged-in-cityhome-navbar.php");
-       }
-       else{
+      }
+      else{
          include("templates/main-navbar.html");
-       }
+      }
      ?>
 
-
+  <!--This div houses the Baton Rouge banner-->>
   <div>
     <img src="images/BRBanner.png" id="BRBanner">
   </div>
+
+  <!--This div holds the 'Ask A Question' Button and the 'Change City' button. It also contains the styling for both-->
   <div>
     <div style="float:right; margin-right:9%">
       <a style="cursor: pointer; float: center;" data-toggle="modal" data-target="#question-modal"><button class="btn btn-primary btn-lg">ASK A QUESTION</button></a>
@@ -79,6 +88,7 @@
     </div>
   </div>
 
+  <!--I don't think this div should exist -Logan -->
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
       <!-- Modal content-->
@@ -89,7 +99,12 @@
        </div>
      </div>
   </div>
+
   <div>
+
+    <!--This div house all of the list group items holding the questions. The includes actually retieves the questions from
+    the database and makes a list group item programmatically to populate the cityhome page with questions. The div also
+    contains stylings for the questions-->
     <div style="width: 64%; float:left; margin: 2%; border-radius:5px";>
       <div class="list-group">
         <?php
@@ -113,37 +128,52 @@
       </div>
     </div>
   </div>
+
+  <!--Adds infinite scroll capabilities-->
   <script>
+
+    /*Declares and initializes the start, questionsPerLoad, and reachedMax variables*/
     var start = 0;
-    var limit = 5;
+    var questionsPerLoad = 5;
     var reachedMax = false;
 
+    /*JQuery function that checks to see if the user has reached the bottom of the screen and if they have
+    then the fill page function will be called*/
     $(window).scroll(function () {
       if ($(window).scrollTop() == $(document).height() - $(window).height())
         fillPage();
     });
 
+    /*Allows us to make changes to the file using the fillpage function*/
     $(document).ready(function() {
         fillPage();
     });
+
+    /*This function fills the page with questions retrieved from the database*/
     function fillPage() {
+      /*If there aren't any more questions left in the databse then the function will just return*/
       if (reachedMax)
         return;
 
+      /*This ajax method calls the retieve questions file to search the database and grab a certain number of
+      questions based on the amount of questions we want to revieve*/
       $.ajax({
         url: 'includes/retrieve-questions.inc.php',
         method: 'POST',
         dataType: 'text',
+
+        /*The data this method wants is at the start point in the database until the questionsPerLoad point*/
         data: {
           fillPage: 1,
           start: start,
-          limit: limit
+          questionsPerLoad: questionsPerLoad
         },
+
         success: function(response) {
           if (response == "reachedMax")
             reachedMax = true;
           else {
-            start += limit;
+            start += questionsPerLoad;
             $(".list-group").append(response);
           }
         }
