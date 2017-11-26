@@ -106,7 +106,7 @@
     the database and makes a list group item programmatically to populate the cityhome page with questions. The div also
     contains stylings for the questions-->
     <div style="width: 64%; float:left; margin: 2%; border-radius:5px";>
-      <div class="list-group">
+      <div id="questions-container" class="list-group">
         <?php
           include("includes/retrieve-questions.inc.php");
         ?>
@@ -116,13 +116,27 @@
       <div style="width: 30%; float:right; background-color: #ff6347; margin-right: 1%;  border-radius: 5px";>
         <h3>Too many questions? Try narrowing down what you see!</h3>
         <div align="center">
-          <select class="selectpicker">
-            <option>Pick A Category</option>
-            <option>Date Night</option>
-            <option>Italian</option>
-            <option>Family Friendly</option>
-            <option>Team Stats</option>
+        <form id="filter-form" action="includes/retrieve-filtered-questions.inc.php" method="GET">
+          <label for="filter-category" class="form-control-label askAQuestionTitle">Category:</label>
+          <!--The different options that are selectable from the dropdown menu-->
+          <select name="filter-category" id="filter-category" class="selectpicker" data-live-search="true">
+            <option>Volunteer</option>
+            <option>Discussion</option>
+            <option>Food and Dining</option>
+            <option>Service providers</option>
+            <option>Leisure</option>
+            <option>Nightlife</option>
+            <option>Date night </option>
+            <option>Shopping</option>
+            <option>Events</option>
+            <option>Amusements and attractions</option>
+            <option>Hotels and lodging</option>
+            <option>Family</option>
+            <option>Pets</option>
+            <option>Museums and Historical Sites</option>
+            <option>Places of worship</option>
           </select>
+        </form>
         </div>
 
       </div>
@@ -136,6 +150,7 @@
     var start = 0;
     var questionsPerLoad = 5;
     var reachedMax = false;
+    var category = "";
 
     /*JQuery function that checks to see if the user has reached the bottom of the screen and if they have
     then the fill page function will be called*/
@@ -166,7 +181,8 @@
         data: {
           fillPage: 1,
           start: start,
-          questionsPerLoad: questionsPerLoad
+          questionsPerLoad: questionsPerLoad,
+          category: category
         },
 
         success: function(response) {
@@ -179,6 +195,16 @@
         }
       });
     }
+
+    $("#filter-category").change(function() {
+      category = $('#filter-form').find(":selected").text();
+      start = 0;
+      reachedMax = false;
+      questionsPerLoad = 5;
+      console.log(category);
+      $("#questions-container").empty();
+      fillPage();
+    });
   </script>
 </body>
 </html>

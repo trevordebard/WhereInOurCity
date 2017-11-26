@@ -1,3 +1,7 @@
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
 <!--The purpose of this modal is a screen popup that appears whenever the 'Ask A Question' button is clicked on the cityhome page.
 The template include the styling for the modal and the input areas for the user to propose their question-->
 <div class="modal fade" id="question-modal" tabindex="-1" role="dialog" aria-labelledby="askAQuestionTitle" aria-hidden="true">
@@ -27,11 +31,22 @@ The template include the styling for the modal and the input areas for the user 
           <label for="question-category" class="form-control-label askAQuestionTitle">Category:</label>
 
           <!--The different options that are selectable from the dropdown menu-->
-          <select class="selectpicker">
-            <option>Date Night</option>
-            <option>Italian</option>
-            <option>Family Friendly</option>
-            <option>Team Stats</option>
+          <select name="question-category" id="question-category" class="selectpicker" data-live-search="true">
+            <option>Volunteer</option>
+            <option>Discussion</option>
+            <option>Food and Dining</option>
+            <option>Service providers</option>
+            <option>Leisure</option>
+            <option>Nightlife</option>
+            <option>Date night </option>
+            <option>Shopping</option>
+            <option>Events</option>
+            <option>Amusements and attractions</option>
+            <option>Hotels and lodging</option>
+            <option>Family</option>
+            <option>Pets</option>
+            <option>Museums and Historical Sites</option>
+            <option>Places of worship</option>
           </select>
         </div>
       </div>
