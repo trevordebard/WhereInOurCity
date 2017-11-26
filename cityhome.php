@@ -67,12 +67,11 @@
       users username. Else import the navbar for a not logged in user*/
       if(isset($_SESSION['u_username'])){
          include("templates/logged-in-cityhome-navbar.php");
-       }
-       else{
+      }
+      else{
          include("templates/main-navbar.html");
-       }
+      }
      ?>
-
 
   <!--This div houses the Baton Rouge banner-->>
   <div>
