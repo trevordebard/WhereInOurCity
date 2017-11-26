@@ -1,7 +1,11 @@
+<!--The purpose of this modal is a screen popup that appears whenever the 'Ask A Question' button is clicked on the cityhome page.
+The template include the styling for the modal and the input areas for the user to propose their question-->
 <div class="modal fade" id="question-modal" tabindex="-1" role="dialog" aria-labelledby="askAQuestionTitle" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
+
+        <!--The button for closing out of the modal-->
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -9,6 +13,9 @@
         <p class="modal-title" id="askAQuestionText">Ask about events, shops, attractions, or whatever you want to know!</p>
       </div>
       <div class="modal-body">
+
+      <!--This modal uses the included post-question.inc.php file to post the question into the database. The format
+      of this form is 2 text input fields and a dropdown menu-->
       <form action="includes/post-question.inc.php" method="POST">
         <div class="form-group">
           <label for="question-question" class="form-control-label askAQuestionTitle">Question:</label>
@@ -18,6 +25,8 @@
           <textarea class="form-control " id="question-description" name="question-description"></textarea>
           <br>
           <label for="question-category" class="form-control-label askAQuestionTitle">Category:</label>
+
+          <!--The different options that are selectable from the dropdown menu-->
           <select class="selectpicker">
             <option>Date Night</option>
             <option>Italian</option>
@@ -26,12 +35,13 @@
           </select>
         </div>
       </div>
-        <div class="modal-footer">
+
+      <!--This div contains the 'Cancel' and 'Post Question' buttons-->
+      <div class="modal-footer">
         <button type="button" class="btn btn-secondary" id="askAQuestionCancelBtn" data-dismiss="modal">Cancel</button>
         <input type="submit" class="btn btn-primary" name="askAQuestionSubmitBtn" value="Ask The Locals">
       </div>
     </form>
-
     </div>
   </div>
 </div>
