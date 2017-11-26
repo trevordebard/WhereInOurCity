@@ -9,22 +9,21 @@
         <p class="modal-title" id="contactUsNewMessageText">We love feedback. Send us some.</p>
       </div>
       <div class="modal-body">
-        <form method="post" action="mailto:loganserio@gmail.com" enctype="text/plain">
-          <div class="form-group">
+        <form method="POST" action="includes/feedback-system.inc.php">
+
             <label for="sender-name" class="form-control-label contactUsTitle">Name:</label><br>
-            <input type="text" class="form-control" name="Name" id="sender-name">
+            <input type="text" class="form-control" name="name" id="sender-name">
             <br>
             <label for="sender-email" class="form-control-label contactUsTitle">E-mail:</label><br>
-            <input type="text" class="form-control" name="E-mail" id="sender-email">
+            <input type="email" class="form-control" name="email" id="sender-email">
             <br>
-
             <label for="message-text" class="form-control-label contactUsTitle">Message:</label><br>
-            <textarea class="form-control" name="Message" id="message-text"></textarea>
+            <textarea class="form-control" name="message" id="message-text"></textarea>
             <div class="modal-footer">
               <input data-dismiss="modal" class="btn" type="button" value="Cancel">
-              <input class="btn btn-primary" type="submit" value="Submit">
+              <input type="submit" class="btn btn-primary" name="contactusSubmitBtn" value="Submit">
             </div>
-          </div>
+
         </form>
       </div>
     </div>
