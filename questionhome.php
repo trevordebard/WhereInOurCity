@@ -117,22 +117,27 @@
 <body>
 
   <?php
-
+  /*imports the login, contact-us, and question modals into the file for later use*/
   include("templates/login-modal.html");
   include("templates/contact-us-modal.html");
   include("templates/question-modal.html");
-   if(isset($_SESSION['u_username'])){
-     include("templates/logged-in-cityhome-navbar.php");
+
+   if(isset($_SESSION['u_username'])){ //if the session variable u_username is set
+     include("templates/logged-in-cityhome-navbar.php"); //show the users username in the navbar
    }
    else{
-     include("templates/main-navbar.html");
+     include("templates/main-navbar.html"); //show the default navbar
    }
 
-    include("includes/dbh.php");
+    include("includes/dbh.php"); //import the database helper
+
+    //Select the question and description from the table T_Posts where the post_id is equal to the id of the post the user clicked on
     $query = "SELECT posts_question, posts_description FROM T_Posts WHERE posts_id=".$_GET['id']."";
-    $_SESSION['post_id'] = $_GET['id'];
-    $results = mysqli_query($conn, $query);
-    $row = mysqli_fetch_assoc($results);
+    $_SESSION['post_id'] = $_GET['id']; //The session variable post_id is set to the id of the post the user clicked
+    $results = mysqli_query($conn, $query); //query the database and store the result in $results
+    $row = mysqli_fetch_assoc($results); //Fetch the individual rows of the result
+
+    /*Store the question and description at the top of the page*/
     echo '<div class="sidebar-container"></div>';
     echo '<div id="quest-comment-container"><div id="question-container"><h2 id="question" class="wrap-text">'.$row['posts_question'].'</h2>';
     echo '<p id="question-description" class="wrap-text">'.$row['posts_description'].'</p><hr id="question-hr"></div>';
@@ -152,9 +157,10 @@
       </div>
     </div>
 
+    <!--This unordered list contains each comment-->
     <ul class="list-group">
       <?php
-          include("includes/retrieve-comments.inc.php");
+          include("includes/retrieve-comments.inc.php"); //imports the retrieve comments file. This file reads each comment from the database and places it as a list group item
        ?>
     </ul>
   </div>

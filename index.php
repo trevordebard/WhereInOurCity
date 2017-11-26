@@ -81,26 +81,32 @@
   </head>
   <body>
     <?php
+
+      /*Import the login-modal and the contact-us-modal for use on the page*/
       include("templates/login-modal.html");
       include("templates/contact-us-modal.html");
-      if(isset($_SESSION['u_username'])){
-        include("templates/logged-in-index-navbar.php");
+
+      if(isset($_SESSION['u_username'])){ //If the session variable u_username is set
+        include("templates/logged-in-index-navbar.php"); //The users username will be displayed in the navbar
       }
       else{
-        include("templates/index-navbar.html");
+        include("templates/index-navbar.html");  //The regular navbar will be displayed
       }
     ?>
 
+    <!--Places the logo into the center of the page and adds styling-->
     <div id="logo-header" align="center">
       <img src="images/wiocLogo.png" style="width: 200px; height: 150px; margin-top: 5%;">
     </div>
 
+    <!--Puts the 'Choose a Location' button under the logo and adds styling-->
     <div id="cont-search-location">
       <button type="button" id="btn-choose-location" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
         Choose a Location
       </button>
     </div>
 
+    <!--The modal for choosing a city -->
     <div class="modal fade" id="myModal" role="dialog">
       <div class="modal-dialog">
         <div class="modal-content">
