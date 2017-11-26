@@ -8,9 +8,11 @@ if(isset($_POST['askAQuestionSubmitBtn'])) { //checks to make sure askAQuestionS
     $u_id = $_SESSION[u_id]; //Set u_id to the id of the user who posted the question
     $question = mysqli_real_escape_string($conn, $_POST['question-question']); //prevents sql injection
     $description = mysqli_real_escape_string($conn, $_POST['question-description']); //prevents sql injection
+    $category = mysqli_real_escape_string($conn, $_POST['question-category']); //prevents sql injection
+
 
     /*insert the user into the db*/
-    $sql = "INSERT INTO T_Posts (posts_question, posts_description, users_id) VALUES ('$question', '$description', '$u_id');";
+    $sql = "INSERT INTO T_Posts (posts_question, posts_description, users_id, posts_category) VALUES ('$question', '$description', '$u_id', '$category');";
     mysqli_query($conn, $sql);
     header("Location: ../cityhome.php?post=success"); //change the header to post=success to help with debugging
     exit(); //closes connection
