@@ -77,9 +77,9 @@
     <div id="signUpContainer">
       <h1>Create an Account</h1>
       <form action="includes/signup-inc.php" method="POST">
-        <input type="text" name="username" id="signUpUser" class="signUpText" placeholder="Username">
-        <input type="text" name="email" id="signUpEmail" class="signUpText" placeholder="Email">
-        <input type="password" name="password" id="signUpPass" class="signUpText" placeholder="Password">
+        <input type="text" name="username" id="signUpUser" class="signUpText" placeholder="Username" required>
+        <input type="email" name="email" id="signUpEmail" class="signUpText" placeholder="Email" required>
+        <input type="password" name="password" id="signUpPass" class="signUpText" placeholder="Password" required>
         <button type="submit" name="signUpSubmitBtn" id="signUpSubmit" class="signUp">Sign up</button>
       </form>
     </div>

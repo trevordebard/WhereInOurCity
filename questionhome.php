@@ -151,7 +151,7 @@
         Comment</a>
       <div id="commment-form-containter">
         <form action="includes/post-comment.inc.php" method="POST">
-          <textarea id="comment-textarea" name="comment-textarea" class="form-control"></textarea>
+          <textarea id="comment-textarea" name="comment-textarea" class="form-control" required></textarea>
           <input id="commentSubmitBtn" name="commentSubmitBtn" type="submit" class="btn" value="Post comment">
         </form>
       </div>
