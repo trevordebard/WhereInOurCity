@@ -144,6 +144,8 @@
   ?>
   <div>
   </div>
+    <!--This div contains the text area and post comment button. There is a glyphicon over the text area
+    that expands and collapses the text area-->
     <div id="post-comment-container">
       <a id="comment-dropdown">
         <span id="glyph-down" class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
