@@ -10,7 +10,7 @@ if(isset($_POST['signUpSubmitBtn'])) { //checks to make sure signUpSubmitBtn bro
   /*insert the user into the db*/
   $sql = "INSERT INTO T_Users (users_username, users_email, users_password) VALUES ('$username', '$email', '$hashedPwd');";
   mysqli_query($conn, $sql); //Queries the databse
-  header("Location: ../signup.php"); //Sets the header
+  header("Location: ../index.php"); //Sets the header
   exit(); //Closes the connection
 }
 else {
