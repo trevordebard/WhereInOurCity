@@ -51,6 +51,59 @@
       margin-top: 0px;
       border-radius: 5px;
     }
+
+    #questions-container{
+      width:64%;
+      max-width: 1000px;
+      float:left;
+      margin: 2%;
+      border-radius:5px;
+    }
+
+    #btn-cat-container{
+      display:block;
+      margin:0 auto;
+      width:30%;
+      float:right;
+      margin-top:30px;
+      text-align: center;
+    }
+	/* Styling for ask a question button */
+    #askQuestionBtn{
+      width:92%;
+      max-width:300px;
+      background-color: #247BA0;
+      color:white;
+      font-size: 18px;
+    }
+	/* Change color of button on hover */
+    #askQuestionBtn:hover{
+      background-color: #0A678F;
+      color:white;
+    }
+	/* Make sure width does not exceed 500px for select */
+    .bootstrap-select {
+      max-width: 500px;
+    }
+    .bootstrap-select .btn {
+      color:black;
+      font-size: 18px;
+      appearance: none;
+
+    }
+	/* Add a margin to the top of category title */
+    #categoryTitle{
+      margin-top:30px;
+    }
+	/* styling for the categoryHR */
+    #categoryHR{
+      width:55%;
+      border:1px solid #247BA0;
+      margin-top: -3px;
+      margin-bottom:30px;
+    }
+
+    /*Also couldnt figure out how to change background color of the navbar when the webpage is half the computer screen*/
   </style>
 </head>
 <body style="width: 100%">
@@ -66,7 +119,7 @@
          include("templates/logged-in-cityhome-navbar.php");
       }
       else{
-         include("templates/main-navbar.php");
+         include("templates/main-navbar.html");
       }
      ?>
 
@@ -77,9 +130,7 @@
 
   <!--This div holds the 'Ask A Question' Button and the 'Change City' button. It also contains the styling for both-->
   <div>
-    <div style="float:right; margin-right:9%">
-      <a style="cursor: pointer; float: center;" data-toggle="modal" data-target="#question-modal"><button class="btn btn-primary btn-lg">ASK A QUESTION</button></a>
-    </div>
+
     <div align="center" style="margin: 0 auto; width: 25%; text-align: center">
       <a style="cursor: pointer;" data-toggle="modal" data-target="#myModal">Change City</a>
     </div>
@@ -96,27 +147,17 @@
        </div>
      </div>
   </div>
-
-  <div>
-
-    <!--This div house all of the list group items holding the questions. The includes actually retieves the questions from
-    the database and makes a list group item programmatically to populate the cityhome page with questions. The div also
-    contains stylings for the questions-->
-    <div style="width: 64%; float:left; margin: 2%; border-radius:5px";>
-      <div id="questions-container" class="list-group">
-        <?php
-          include("includes/retrieve-questions.inc.php");
-        ?>
-      </div>
-    </div>
-    <div>
-      <div style="width: 30%; float:right; background-color: #ff6347; margin-right: 1%;  border-radius: 5px";>
-        <h3>Too many questions? Try narrowing down what you see!</h3>
-        <div align="center">
+  <!--This container holds the categories filter and relating html elements-->
+  <div id="btn-cat-container">
+    <button align="center" id="askQuestionBtn" data-toggle="modal" data-target="#question-modal" class="btn">Ask A Question</button>
+    <h3 id="categoryTitle" align="center">Sort By Category:</h3>
+    <hr id="categoryHR" align="center">
+    <div id="select-cityhome" align="center">
         <form id="filter-form" action="includes/retrieve-filtered-questions.inc.php" method="GET">
-          <label for="filter-category" class="form-control-label askAQuestionTitle">Category:</label>
+          <!--<label for="filter-category" class="form-control-label askAQuestionTitle">Category:</label>-->
           <!--The different options that are selectable from the dropdown menu-->
-          <select name="filter-category" id="filter-category" class="selectpicker" data-live-search="true">
+          <select name="filter-category" id="filter-category" class="selectpicker" data-width="87%" data-live-search="true" data-dropup-auto="false">
+            <option selected="selected">All</option>
             <option>Volunteer</option>
             <option>Discussion</option>
             <option>Food and Dining</option>
@@ -134,13 +175,21 @@
             <option>Places of worship</option>
           </select>
         </form>
-        </div>
+      </div>
+  </div>
 
+  <div>
+    <!--This div house all of the list group items holding the questions. The includes actually retieves the questions from
+    the database and makes a list group item programmatically to populate the cityhome page with questions. The div also
+    contains stylings for the questions-->
+
+      <div id="questions-container" class="list-group">
+        <?php
+          include("includes/retrieve-questions.inc.php");
+        ?>
       </div>
     </div>
   </div>
-
-  <!--Adds infinite scroll capabilities-->
   <script>
 
     /*Declares and initializes the start, questionsPerLoad, and reachedMax variables*/
@@ -151,11 +200,10 @@
 
     /*JQuery function that checks to see if the user has reached the bottom of the screen and if they have
     then the fill page function will be called*/
-    $(window).scroll(function() {
-   if($(window).scrollTop() + $(window).height() == $(document).height()) {
-	   fillPage();
-   }
-});
+    $(window).scroll(function () {
+      if ($(window).scrollTop() + $(window).height() == $(document).height())
+        fillPage();
+    });
 
     /*Allows us to make changes to the file using the fillpage function*/
     $(document).ready(function() {
