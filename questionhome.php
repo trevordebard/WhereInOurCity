@@ -126,7 +126,7 @@
      include("templates/logged-in-cityhome-navbar.php"); //show the users username in the navbar
    }
    else{
-     include("templates/main-navbar.html"); //show the default navbar
+     include("templates/main-navbar.php"); //show the default navbar
    }
 
     include("includes/dbh.php"); //import the database helper
