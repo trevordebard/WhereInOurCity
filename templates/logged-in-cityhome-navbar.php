@@ -1,4 +1,5 @@
 <?php
+  //The nav bar that appears on the cityhome page when the user is logged in
   echo '<nav class="navbar navbar-default">
         <a class="navbar-brand" href="cityhome.php">
           <img src="images/wiocLogo.png" id="wiocNavbarLogo" alt="">
@@ -43,16 +44,5 @@
   $("#logout").click(function() {
     $("#logoutBtn").trigger("click");
   });
-
-  $("#inputSearchBar").focus(function() {
-    $("#inputSearchBar").animate({
-      width: "300px"
-    });
-  });
-  $("#inputSearchBar").focusout(function() {
-    console.log("test");
-    $("#inputSearchBar").animate({
-      width: "100px",
-    });
-  });
+ //when the logout href is clicked it triggers the functionality of the hidden logout button
 </script>

@@ -1,4 +1,5 @@
 <?php
+//The nav bar that appears on the index page when the user is logged in
 echo '<nav class="navbar navbar-default">
   <div class="navbar-header">
     <button type="button" class="navbar-toggle" id="collapsedCityNavbar" data-toggle="collapse" data-target="#cityNavbar">
@@ -30,4 +31,5 @@ echo '<nav class="navbar navbar-default">
 $("#logout").click(function() {
   $("#logoutBtn").trigger("click");
 });
+//when the logout href is clicked it triggers the functionality of the hidden logout button
 </script>

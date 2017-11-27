@@ -9,13 +9,13 @@
     <title>Sign Up for WIOC</title>
     <style>
       #wiocNavbarLogo{
-        positon:relative;
-        top:2px;
+        positon:relative; /*Allows the logo image to be positioned*/
+        top:2px; /*Puts it right where it is*/
       }
       .navbar-brand>img{
-        margin-top:-23px;
-        height:60px;
-        width:auto;
+        margin-top:-23px; /*Gives the image a margin top*/
+        height:60px; /*Sets the height of the image*/
+        width:auto; /*Sets the width to an appropriate width based on height*/
       }
 
       /*****Sign Up*****/
@@ -71,12 +71,15 @@
   <body>
     <nav class="navbar navbar-default">
       <a class="navbar-brand" href="index.php">
+        <!--Gives us the wioc logo on the navbar-->
         <img src="images/wiocLogo.png" id="wiocNavbarLogo" alt="">
       </a>
   	</nav>
     <div id="signUpContainer">
+      <!--Header of the signup page-->
       <h1>Create an Account</h1>
       <form action="includes/signup-inc.php" method="POST">
+        <!--All the text inputs that the user needs to fill in to be up to sign up-->
         <input type="text" name="username" id="signUpUser" class="signUpText" placeholder="Username" required>
         <input type="email" name="email" id="signUpEmail" class="signUpText" placeholder="Email" required>
         <input type="password" name="password" id="signUpPass" class="signUpText" placeholder="Password" required>

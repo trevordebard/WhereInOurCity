@@ -1,20 +1,21 @@
 body {
-  width: 100%;
+  width: 100%; /*Sets the body of the page to always be 100%*/
 }
+/*Centers in middle of page*/
 .horizontal-center {
   margin-left: 50%;
   transform: translate(-50%, -50%);
 }
 
 .brBtn {
-  margin-top: 1%;
+  margin-top: 1%; /*gives the br button in the choose city modal a margin top*/
 }
 
 /*****LOGIN MODAL******/
 .loginmodal-container {
   padding: 40px; /*How far away the contents are from the border of the modal*/
-  width:100%;
-  max-width:500px; /*Width of modal*/
+  width:100%; /*Width of modal*/
+  max-width:500px; /*Max-Width of modal, mobile purposes*/
   background-color: white; /*Background color of modal*/
   margin: 0 auto; /*Since we specified the width, this will make everything sit in the center of the modal*/
   border-radius: 4px; /*Rounded edges for border*/
@@ -24,7 +25,7 @@ body {
 .loginmodal-container h1 { /*Controls the header of the modal "Log in to your WIOC account"*/
   text-align: center; /*Centers the header*/
   font-size: 25px; /*Changes the size of the header*/
-  font-family: helvetica, sans-serif;
+  font-family: helvetica, sans-serif; /*Font*/
   color:#247BA0; /*Color of the header*/
 }
 
@@ -36,9 +37,9 @@ body {
   font-size: 19px; /*Font size of the text on the button*/
   border:none; /*Need this or as some dumb auto border, can do this with border:0 not sure which is better practice*/
   width: 100%; /*Takes up all space on modal while keeping padding*/
-  display: block;
+  display: block; /*Displays the submit button in a block so its lined up with everything above it*/
   margin-bottom: 10px; /*How far the button is away from the thing below it*/
-  position: relative;
+  position: relative; /*Allows for easy positioning*/
   margin-top:10px; /*How far the submit button is away from the thing above it*/
 }
 
@@ -55,8 +56,8 @@ body {
   padding: 0 10px; /*How far placeholder and actual typed text are away from the sides from the textbox, also affects where the text starts*/
   border: none; /*Border of text box*/
   border-bottom:1px solid #247BA0; /*Gives us only the bottom border*/
-  -webkit-border-radius:0;
-  border-radius:0;
+  -webkit-border-radius:0; /*Makes the text input not appear on mobile devices*/
+  border-radius:0; /*Reinforces the above line*/
 }
 
 .loginText:hover {
@@ -68,11 +69,11 @@ body {
   font-size:13px; /*Size of "Change Password"*/
 }
 #forgotPasswordText{ /*Paragraph tag that is used to center and move the forgot password text slightly down*/
-  text-align: center;
-  margin-top:20px;
+  text-align: center; /*Center the text in the login modal*/
+  margin-top:20px; /*Give it a margin top to give it a little seperation from the things above it*/
 }
-#loginModalText{ /*Text underneath the hr that allowss the user to sign up from the login modal*/
-  text-align: center;
+#loginModalText{ /*Text underneath the hr that allows the user to sign up from the login modal*/
+  text-align: center; /*Centers that text*/
 }
 #loginModalHR{
   border:0.3px solid #247BA0; /*Changes the horizontal rule's thickness and color*/
@@ -92,22 +93,22 @@ body {
 
 /*****Underline Animation****/
 .underlineAnimate{
-  display: inline;
-  position: relative;
-  overflow: hidden;
-  top: 6px;
+  display: inline; /*Display the animation in line*/
+  position: relative; /*Allows us the position the line*/
+  overflow: hidden; /*Hides overflow*/
+  top: 6px; /*Positions the line*/
 }
 .underlineAnimate:after {
-  content: "";
-  background:#247BA0;
-  position: absolute;
-  left: 0;
-  right: 100%;
+  content: ""; /*After the line appears make it go blank*/
+  background:#247BA0; /*Give line background color*/
+  position: absolute; /*Absolutly position it*/
+  left: 0; /*Line is positioned to left*/
+  right: 100%; /*Let the line go the width of the text above it*/
   bottom: 5px;
-  height: 4px;
-  transition-property: top bottom;
-  transition-duration: 0.4s;
-  transition-timing-function: ease-out;
+  height: 4px; /*Thickness of line*/
+  transition-property: top bottom; /*How the line comes in*/
+  transition-duration: 0.4s; /*How long it takes the line to extend*/
+  transition-timing-function: ease-out; /*How the line exits the screen*/
 }
 .underlineAnimate:hover:after,
 .underlineAnimate:focus:after,
@@ -115,39 +116,39 @@ body {
   right: 0;
 }
 .nav li {
-  display: inline;
+  display: inline; /*Display the navbar elements in a line*/
 }
 
 .modal-open {
-  position: fixed;
+  position: fixed; /*Not sure if we need this anymore but this fixes the position of the modal when it is opened*/
 }
 
 /******Navbar*******/
 .navbarText {
-  font-size: 15px;
-  font-weight: bold;
-  padding: 15px 10px;
-  font-family: helvetica, sans-serif;
-  margin-left: 1px;
+  font-size: 15px; /*Size of font for navbar text*/
+  font-weight: bold; /*Bolds the text*/
+  padding: 15px 10px; /*Gives the text a little spacing from the top and bottom*/
+  font-family: helvetica, sans-serif; /*Sets the font type*/
+  margin-left: 1px; /*Margin left to give space*/
   position:relative;
-  top:0;
+  top:0; /*Essentailly centers the text on the navbar*/
 }
 .nav.navbar-nav.navbar-right li a {
-  color: #464646;
+  color: #464646; /*Color of the navbar text*/
 }
 .nav.navbar-nav.navbar-right li a:hover {
-  color: #000000;
+  color: #000000; /*When the text is hovered it turns black*/
 }
 #wiocNavbarLogo{
-  positon:relative;
-  top:2px;
+  positon:relative; /*Position of wioc logo*/
+  top:2px; /*positions the wioc logo 2px towards the top*/
 }
 .navbar-brand>img{
-  margin-top:-23px;
-  height:60px;
-  width:auto;
+  margin-top:-23px; /*WIOC logo given margin top*/
+  height:60px; /*Height of wioc logo*/
+  width:auto; /*width of the wioc logo*/
 }
 .wrap-text {
-  overflow-wrap: break-word;
-  word-wrap: break-word;
+  overflow-wrap: break-word; /*Breaks words if overflow occurs*/
+  word-wrap: break-word; /*Breaks the word wrapping*/
 }
