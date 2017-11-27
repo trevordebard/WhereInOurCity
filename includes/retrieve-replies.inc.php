@@ -10,7 +10,6 @@
   else {
     while ($row1 = mysqli_fetch_assoc($results1)) {
       $reply = $row1['replies_reply'];
-      echo '<script>console.log("'.$reply.'")</script>';
       $username1 = $row1['users_username'];
       echo
         '<li class="list-group-item comment-reply display-none wrap-text">
