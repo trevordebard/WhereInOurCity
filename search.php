@@ -85,7 +85,6 @@
     <img src="images/BRBanner.png" id="BRBanner">
   </div>
 
-  <!--I don't think this div should exist -Logan -->
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
       <!-- Modal content-->
@@ -96,11 +95,14 @@
        </div>
      </div>
   </div>
-  
+
   <div style="width: 100%; float:left; border-radius:5px";>
       <div id="questions-container" class="list-group">
         <?php
-
+        /*The following echo is how search is displayed.
+        The results are split into two tabs, a comments and a posts tab.
+        The tab for postInfo includes the file associated with searching for posts.
+        The tab for commentInfo includes the files associated with searching for posts. */
       echo '
 		  <ul class="nav nav-tabs nav-justified">
 			<li class="active"><a data-toggle="tab" href="#postInfo-tab">Posts</a></li>
@@ -109,17 +111,16 @@
 		  <div class="tab-content">
 			<div id="postInfo-tab" class="tab-pane fade in active">
 			  <h3 class="search-tabs-content" style = "margin-left:18%;"> Posts:</h3>';
-			  include("includes/retrieve-post-results.inc.php"); 
+			  include("includes/retrieve-post-results.inc.php");
 			echo '</div>
 			<div id="commentInfo-tab" class="tab-pane fade">
 			  <h3 class="search-tabs-content" style = "margin-left:18%;"> Comments:</h3>';
-			  include("includes/retrieve-comment-results.inc.php"); 
+			  include("includes/retrieve-comment-results.inc.php");
        echo' </div>
       </div>';
     ?>
       </div>
     </div>
-	
+
 </body>
 </html>
-

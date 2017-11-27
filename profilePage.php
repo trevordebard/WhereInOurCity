@@ -142,6 +142,9 @@
     <div class="modal fade" id="account-deletion-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
         <div class="loginmodal-container">
+                    <!--This describes the account deletion process.
+                        If the user selects to delete their account, they are warned that it is permanent.
+                        The user then confirms their decision to delete the account or not to.-->
           <h1 id="delete-account-text">You are about to delete your account. Are you sure you want to delete your account? This process is permanent.</h1><br>
           <form action="includes/delete-account.inc.php" method="POST">
             <button type="submit" name="deleteAccountBtn" id="deleteAccountBtn">Yes, Please Delete My Account.</button>
