@@ -68,18 +68,6 @@
 
   <body>
     <?php
-<<<<<<< HEAD
-      include("templates/contact-us-modal.html");
-      if(isset($_SESSION['u_username'])){
-        include("templates/logged-in-cityhome-navbar.php"); //include navbar
-      }
-      else {
-        echo 'oops';
-      }
-      /*
-       * Sets up profile page with with blue header with username and 3 tabs (Account info, Questions asked, and Comments&Replies Posted)
-       */
-=======
       include("templates/contact-us-modal.html"); //Includes the contact us modal at the top of the page.
       if(isset($_SESSION['u_username'])){ //If the user is logged in, do the following.
         /*
@@ -123,7 +111,6 @@
       questionsAsked-tab is where the user is shown their past questions.
       commentReplies-tab is where the user is shown their past comments and replies.
       */
->>>>>>> origin/master
       echo '<div id="profile-header-container">
           <p id="profile-username"> '.$_SESSION['u_username'].'</p>
       </div>
@@ -152,13 +139,9 @@
         </div>
       </div>'
     ?>
-    <!--Set up delete account modal-->
     <div class="modal fade" id="account-deletion-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
         <div class="loginmodal-container">
-                    <!--This describes the account deletion process.
-                        If the user selects to delete their account, they are warned that it is permanent.
-                        The user then confirms their decision to delete the account or not to.-->
           <h1 id="delete-account-text">You are about to delete your account. Are you sure you want to delete your account? This process is permanent.</h1><br>
           <form action="includes/delete-account.inc.php" method="POST">
             <button type="submit" name="deleteAccountBtn" id="deleteAccountBtn">Yes, Please Delete My Account.</button>
