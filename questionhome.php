@@ -164,19 +164,5 @@
        ?>
     </ul>
   </div>
-  <script>
-    $("#comment-dropdown").click(function() {
-      $("#commment-form-containter").toggleClass('display-none');
-      $(this).children(".glyphicon").toggle();
-    });
-
-    $(".view-replies").click(function() {
-      $(this).parent().next().next().children(".comment-reply").toggleClass('display-none');
-    });
-
-    $(".reply-comment").click(function() {
-      $(this).parent().parent().next(".reply-form").toggleClass('display-none');
-    })
-  </script>
 </body>
 </html>

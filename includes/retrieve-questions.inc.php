@@ -21,7 +21,10 @@
               <div class="d-flex w-100 justify-content-between">
                 <h2>'.$row['posts_question'].'</h2>
                 <p>'.$row['posts_description'].'</p>
-                <button class="btn">Helpful?</button>
+                <form action="includes/update-helpfulness.inc.php" method="POST">
+                  <input type="text" name="posts_id" style="display:none" value="'.$row['posts_id'].'"/>
+                  <button type="submit" class="btn" name="questionHelpfulnessBtn">Helpful? ['.$row['posts_helpfulness'].']</button>
+                </form>
               </div>
             </a>
           ';
@@ -46,7 +49,10 @@
               <div class="d-flex w-100 justify-content-between">
                 <h2>'.$row['posts_question'].'</h2>
                 <p>'.$row['posts_description'].'</p>
-                <button class="btn">Helpful?</button>
+                <form action="includes/update-helpfulness.inc.php" method="POST">
+                  <input type="text" name="posts_id" style="display:none" value="'.$row['posts_id'].'"/>
+                  <button type="submit" class="btn" name="questionHelpfulnessBtn">Helpful? ['.$row['posts_helpfulness'].']</button>
+                </form>
               </div>
             </a>
           ';
