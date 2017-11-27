@@ -154,10 +154,11 @@
 
     /*JQuery function that checks to see if the user has reached the bottom of the screen and if they have
     then the fill page function will be called*/
-    $(window).scroll(function () {
-      if ($(window).scrollTop() == $(document).height() - $(window).height())
-        fillPage();
-    });
+    $(window).scroll(function() {
+   if($(window).scrollTop() + $(window).height() == $(document).height()) {
+	   fillPage();
+   }
+});
 
     /*Allows us to make changes to the file using the fillpage function*/
     $(document).ready(function() {
