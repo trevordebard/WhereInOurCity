@@ -1,6 +1,5 @@
-<!--Comments incomplete-->
 <?php
-  session_start();
+  session_start(); //start the session
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +13,7 @@
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 
   <style>
-    /******Navbar*******/
+    /******Navbar Styling*******/
     .navbarText {
       font-size: 15px;
       font-weight: bold;
@@ -52,8 +51,6 @@
       margin-top: 0px;
       border-radius: 5px;
     }
-
-    /*Also couldnt figure out how to change background color of the navbar when the webpage is half the computer screen*/
   </style>
 </head>
 <body style="width: 100%">
@@ -88,7 +85,7 @@
     </div>
   </div>
 
-  <!--I don't think this div should exist -Logan -->
+  <!--Change city modal that displays a button with the ctiy, Baton Rouge-->
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
       <!-- Modal content-->
@@ -197,14 +194,13 @@
       });
     }
 
-    $("#filter-category").change(function() {
-      category = $('#filter-form').find(":selected").text();
-      start = 0;
-      reachedMax = false;
-      questionsPerLoad = 5;
-      console.log(category);
-      $("#questions-container").empty();
-      fillPage();
+    $("#filter-category").change(function() { //when the user selects a new category to filter
+      category = $('#filter-form').find(":selected").text(); //stores the selected category in var category
+      start = 0; //resets start to 0 because new content will be loaded into cityhome
+      reachedMax = false; //sets reachedMax to false because new content will be loaded
+      questionsPerLoad = 5; //5 posts will be loaded by default, and as the users scrolls, more will be added
+      $("#questions-container").empty(); //empty all the questions displayed
+      fillPage(); //calls fillPage, which will use ajax to get the new filtered questions
     });
   </script>
 </body>
