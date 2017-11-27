@@ -1,3 +1,5 @@
+<?php
+echo'
 <nav class="navbar navbar-default">
   <a class="navbar-brand" href="cityhome.php">
     <img src="images/wiocLogo.png" id="wiocNavbarLogo" alt="">
@@ -12,7 +14,7 @@
   </div>
   <div class="collapse navbar-collapse" id="main-navbar">
     <div class="col-sm-3 col-md-3">
-      <form class="navbar-form" role="search" id="searchBar">
+      <form class="navbar-form" role="search" id="searchBar" action="search.php" method="POST">
       <div class="input-group">
         <input id="inputSearchBar" type="text" class="form-control" placeholder="Search..." name="searchNewCity">
         <!--Maybe try to center this search bar?-->
@@ -29,7 +31,9 @@
       <!--Fix How the underline animation looks when web page is half screened-->
     </ul>
   </div>
-</nav>
+</nav>';
+?>
+
 <script>
   $("#inputSearchBar").focus(function() {
     $("#inputSearchBar").animate({

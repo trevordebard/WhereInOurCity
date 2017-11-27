@@ -69,7 +69,7 @@
          include("templates/logged-in-cityhome-navbar.php");
       }
       else{
-         include("templates/main-navbar.html");
+         include("templates/main-navbar.php");
       }
      ?>
 

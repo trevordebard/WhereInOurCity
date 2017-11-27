@@ -13,7 +13,7 @@
         </div>
         <div class="collapse navbar-collapse" id="cityNavbar">
           <div class="col-sm-3 col-md-3">
-            <form class="navbar-form" role="search" id="searchBar">
+            <form class="navbar-form" role="search" id="searchBar" action="search.php" method="POST">
             <div class="input-group">
               <input id="inputSearchBar" type="text" class="form-control" placeholder="Search..." name="searchNewCity">
               <!--Maybe try to center this search bar?-->
