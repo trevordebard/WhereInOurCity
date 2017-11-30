@@ -5,8 +5,8 @@
         $u_id = $_SESSION['u_id']; //Set u_id to be the u_id session variable
         $sql = "DELETE FROM t_users WHERE users_id = $u_id"; //search the database for the user id and delete the user
         mysqli_query($conn, $sql); //queries the database
-        session_unset(); //deletes session variables
-        session_destroy(); //deletes all data associated with username
+        session_unset();
+        session_destroy();
         header("Location: ../index.php?delete=success"); //change the header to have delete=success for debugging help
         exit(); //close the connection
     }

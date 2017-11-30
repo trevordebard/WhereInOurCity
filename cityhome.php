@@ -29,6 +29,18 @@
     .nav.navbar-nav.navbar-right li a:hover {
       color: #000000;
     }
+    .question-lgi:hover {
+      border: 2px solid #247ba0;
+    }
+    .question-lgi .main-a {
+      color: #464646;
+      text-decoration: none;
+    }
+    /* container for comment button */
+    .question-btn-container {
+      margin-left: 1.5%;
+      margin-bottom: 5px;
+    }
     #wiocNavbarLogo{
       positon:relative;
       top:2px;
@@ -41,7 +53,7 @@
     /*Puts the Baton Rouge Banner underneath the navbar*/
     #BRBanner {
       position: relative;
-      top:-15px;
+      top:-40px;
       width: 100%;
     }
 
@@ -119,7 +131,7 @@
          include("templates/logged-in-cityhome-navbar.php");
       }
       else{
-         include("templates/main-navbar.html");
+         include("templates/main-navbar.php");
       }
      ?>
 
@@ -131,7 +143,7 @@
   <!--This div holds the 'Ask A Question' Button and the 'Change City' button. It also contains the styling for both-->
   <div>
 
-    <div align="center" style="margin: 0 auto; width: 25%; text-align: center">
+    <div align="center" style="margin: 0 auto; width: 25%; text-align: center; margin-top:0px;">
       <a style="cursor: pointer;" data-toggle="modal" data-target="#myModal">Change City</a>
     </div>
   </div>

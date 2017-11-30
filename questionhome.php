@@ -9,55 +9,46 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>
     #question {
-      color: #242424; /*Change color of question text */
+      color: #242424;
     }
-    /*CSS properties for the quesiton description */
     #question-description {
       font-size: 17px;
       margin-bottom: 10px;
       color: #242424;
     }
-    /* Set the question container's background color */
     #question-container {
       background-color: white;
     }
-    /* Layout for containter holding quesiton, description, and comments */
     #quest-comment-container {
       width: 60%;
       margin-left: 7%;
       margin-top: 2%;
     }
-    /* Container holding post comment textarea and button */
     #post-comment-container {
       margin-bottom: 50px;
     }
-    /* dropdown for post comment textarea dn button */
     #comment-dropdown {
       text-decoration: none;
       display: block;
       color: black;
       max-width: 87px;
     }
-    /* dropdown on hover */
     #comment-dropdown:hover {
       color: #247ba0;
     }
-    /* post comment textarea */
     #comment-textarea {
       resize: vertical;
       width: 100%;
       min-height: 100px;
       margin-bottom: 10px;
     }
-    /* set width of post comment form */
     #commment-form-containter {
       width: 100%;
     }
-    /* icon indicating you can hide comment form */
+
     #glyph-up {
       display: none;
     }
-    /* button to post comment to page */
     #submit-comment {
       background-color: transparent;
       border: 1px solid #828181;
@@ -66,28 +57,27 @@
     #submit-comment:hover {
       background-color: #E6EDFA;
     }
-    /* hr that divides question and description from comments */
     #question-hr {
       border: .84px solid #BCBBBB;
     }
-    /* class for ability to view replies to comments */
     .view-replies {
       background-color: transparent;
     }
-    /* easily make anything in the page hidden */
     .display-none {
       display: none;
     }
-    /* styling for comments on hover */
+    .display-inline-block {
+      display: inline-block;
+    }
+
     .comment-lgi:hover {
       border: 2px solid #247ba0;
     }
-    /* styling for comments */
+
     .comment-lgi {
       padding: 10px;
       margin-bottom: 5px;
     }
-    /* class for reply to comment dropdowns */
     .comment-reply {
       padding: 10px;
       margin-bottom: 5px;
@@ -97,32 +87,28 @@
     .comment-reply:hover {
       border: 2px solid #DB2B39;
     }
-    /* hr to divide comment from view replies, reply, and helpful buttons */
     .comment-hr {
       width: 97%;
       border: .84px solid #BCBBBB;
       margin-bottom: 8px;
     }
-    /* right hand side of page */
     .sidebar-container{
       width: 33%;
       position: relative;
       text-align: center;
       float: right;
     }
-    /* container for comment button */
     .comment-btn-container {
       margin-left: 1.5%;
       margin-bottom: 5px;
     }
-    /* textarea to reply to a comment */
     .reply-textarea {
       width: 98%;
       resize: vertical;
       min-height: 100px;
       margin-top: 5px;
     }
-    /* styling for all paragraphs */
+
     p {
       font-size: 16px;
     }

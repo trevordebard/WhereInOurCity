@@ -23,20 +23,23 @@
         to build the questions programmatically. Each question contains a question, description, and a helpful button*/
         while ($row = mysqli_fetch_assoc($results)) {
           //The .= concatonates the string to itself
+          //                  <button type="submit" class="btn" name="questionHelpfulnessBtn">Helpful? ['.$row['posts_helpfulness'].']</button>
+          //<a class="helpful"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> Helpful ['.$row['comments_helpfulness'].']</a>
           $response .= '
-            <a href="questionhome.php?id='.$row['posts_id'].'" class="list-group-item list-group-item-action flex-column align-items-start wrap-text">
-              <div class="d-flex w-100 justify-content-between">
+          <li class="list-group-item list-group-item-action question-lgi wrap-text">
+            <a class="main-a" href="questionhome.php?id='.$row['posts_id'].'">
                 <h2>'.$row['posts_question'].'</h2>
                 <p>'.$row['posts_description'].'</p>
-                <form action="includes/update-helpfulness.inc.php" method="POST">
-                  <input type="text" name="posts_id" style="display:none" value="'.$row['posts_id'].'"/>
+                <form action="includes/update-helpfulness.inc.php" method="POST" style="display:none">
+                  <input type="text" name="posts_id" style="display:none" value="'.$row['posts_id'].'">
                   <button type="submit" class="btn" name="questionHelpfulnessBtn">Helpful? ['.$row['posts_helpfulness'].']</button>
                 </form>
-              </div>
             </a>
+            <a class="helpful-q"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> Helpful ['.$row['posts_helpfulness'].']</a>
+          </li>
           ';
         }
-        exit($response); //sends the response back to cityhome
+        exit($response .= '</ul>'); //sends the response back to cityhome
       }
     }
 
@@ -74,3 +77,11 @@
     }
 }
 ?>
+<script>
+console.log("hello");
+  $("body").on("click", ".helpful-q", function() {
+    console.log("yo");
+    console.log($(this).prev().children("form"));
+    $(this).prev().children("form").children(".btn").trigger("click");
+  });
+</script>

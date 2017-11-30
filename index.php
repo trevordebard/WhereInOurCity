@@ -117,18 +117,7 @@
       </div>
     </div>
     <!--This block of text shows the development team's mission with the project. Currently it is filled with Lorem Ipsum place holder text.-->
-    <div id="ourMissionText">
-      <hr id="ourMissionHR" class="space">
-      <h2 class="textCentered"><a id="ourMissionHeader">Our Mission</a></h2>
-      <br>
-      <p class="ourMissionText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed scelerisque, metus id porta pellentesque, mauris nisl viverra orci, at vulputate quam est ut leo. Duis eros nibh, faucibus sed feugiat nec, fermentum eget massa. Nullam convallis, ante nec consequat ultricies, nulla lectus tristique elit, vulputate varius arcu risus nec libero. Nulla maximus aliquet dolor tempor posuere. Proin consectetur et arcu a laoreet. Sed eget ultricies ipsum. Cras ac rutrum velit, ut posuere nunc. Aliquam euismod urna at lacus vulputate volutpat. Donec feugiat velit vitae dolor venenatis, vitae pretium neque tempus. Phasellus in mauris at odio consectetur mattis eget vitae lectus. Pellentesque porttitor massa a tempor ultricies. Duis in nibh ac lorem pretium fringilla id at nulla. Sed egestas purus in nibh convallis, vitae commodo ligula placerat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce ullamcorper, lacus nec sodales euismod, sem dui bibendum sem, eget hendrerit nisi nulla non neque. Praesent non velit scelerisque lectus lobortis rutrum.
-      Fusce vitae tincidunt eros. Vivamus ornare sodales diam eu suscipit. Donec eu magna pellentesque ipsum rhoncus viverra quis id magna. Curabitur nec urna tortor. Etiam ullamcorper vehicula orci, et efficitur purus dapibus nec. In non est eros. Quisque volutpat odio sit amet mi interdum, in fermentum urna consequat.</p>
-      <br>
-      <p class="ourMissionText">Nunc pharetra, ex non maximus ultrices, metus erat sollicitudin orci, in scelerisque arcu lacus elementum mauris. Praesent eleifend consequat nisl, quis convallis eros dapibus ut. Fusce quam erat, maximus eget blandit id, posuere vitae ipsum. Vestibulum pharetra mauris vel mauris tincidunt suscipit. Aliquam consequat, diam eu feugiat volutpat, lorem felis vestibulum ex, nec porta dui dolor sit amet augue. Pellentesque sit amet rhoncus leo. Vestibulum tempor vestibulum malesuada. Morbi semper accumsan justo, eu volutpat nisl volutpat eu.
-      In hac habitasse platea dictumst. Nam et fermentum dui. Ut nec pretium leo. Fusce ex magna, facilisis eget purus eu, rhoncus venenatis velit. In purus augue, lacinia vel metus id, consequat congue lectus. Etiam hendrerit sed ligula id ullamcorper. Donec interdum iaculis orci, sit amet pharetra enim dapibus ut. Donec luctus tellus nulla, ac maximus tellus ullamcorper non. Phasellus vitae nunc et lacus feugiat placerat. Curabitur blandit fringilla luctus. Sed egestas lectus non orci cursus, a dictum nibh imperdiet. Vestibulum rutrum vestibulum vehicula.
-      Suspendisse scelerisque est non elit pretium malesuada. Nulla orci leo, sagittis eu congue et, scelerisque in sem. Quisque posuere urna non arcu vulputate varius. In cursus nibh id leo auctor scelerisque. Phasellus ut ullamcorper est. Aliquam eget nisi id metus efficitur tincidunt. Duis ante nulla, consequat a arcu id, vestibulum semper nisi. Mauris diam nisl, fermentum vel fringilla eu, finibus id tellus. Duis malesuada dui ut dictum venenatis. Cras ultrices et mauris sit amet posuere. </p>
-
-    </div>
+    
     <script>
     $(document).ready(function(){
       $("#ourMissionBtn").click(function() {//When the Our Mission button is clicked,

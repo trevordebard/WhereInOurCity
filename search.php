@@ -43,7 +43,7 @@
     /*Puts the Baton Rouge Banner underneath the navbar*/
     #BRBanner {
       position: relative;
-      top:-15px;
+      top:-40px;
       width: 100%;
     }
 
@@ -85,6 +85,7 @@
     <img src="images/BRBanner.png" id="BRBanner">
   </div>
 
+  <!--I don't think this div should exist -Logan -->
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
       <!-- Modal content-->
@@ -99,10 +100,7 @@
   <div style="width: 100%; float:left; border-radius:5px";>
       <div id="questions-container" class="list-group">
         <?php
-        /*The following echo is how search is displayed.
-        The results are split into two tabs, a comments and a posts tab.
-        The tab for postInfo includes the file associated with searching for posts.
-        The tab for commentInfo includes the files associated with searching for posts. */
+
       echo '
 		  <ul class="nav nav-tabs nav-justified">
 			<li class="active"><a data-toggle="tab" href="#postInfo-tab">Posts</a></li>
