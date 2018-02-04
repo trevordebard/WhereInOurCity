@@ -19,69 +19,113 @@
       }
 
       /*****Sign Up*****/
-      #signUpContainer{
-        width:85%; /*Sets width for mobile devices*/
-        max-width:500px; /*The sign up container can never be bigger than 500px*/
-        height:100%; /*Sets width for mobile*/
-        max-height:530px; /*The height can never be bigger thaan 530px*/
-        background-color: white; /*Sets background color to white*/
-        margin: 0 auto; /*Centers container itself in the middle of the page*/
-        padding: 1px; /*How much space the content inside have between each other*/
-        font-family: helvetica, sans-serif; /*font*/
+      .signUpContainer-grid{
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap:60px;
       }
-      #signUpContainer h1{
-        text-align: center; /*Centers the header*/
-        font-size: 35px; /*Changes the size of the header*/
-        font-family: helvetica, sans-serif; /*font*/
-        color:#247BA0; /*Color of the header*/
-        padding-bottom: 5px; /*How far the things below the header are from the header*/
-      }
-      #signUpSubmit {
-        border-radius: 4px; /*Rounds button edges*/
-        color: white; /*Text of submit*/
-        background-color: #247BA0; /*Background color of button*/
-        padding: 10px 0px; /*Affects the height of the button*/
-        font-size: 19px; /*Font size of the text on the button*/
-        border:none; /*Need this or as some dumb auto border, can do this with border:0 not sure which is better practice*/
-        width: 100%; /*Takes up all space on modal while keeping padding*/
-        margin-top:80px; /*How far the submit button is away from the thing above it*/
-  		}
-      #signUpSubmit:hover {
-  		  background-color: #0A678F; /*Color of background when cursor is hovering on submit button*/
-  		}
-  		.signUpText { /*Controls text and text box for username and password*/
+      .signUpText{
+        align-items:start;
         height: 50px; /*Height of text boxes*/
         font-size: 16px; /*Font size of placeholder text and text typed into box*/
-        width: 100%; /*Takes up all space on modal while keeping padding*/
-        margin-bottom: 10px; /*How far away each text box is away from the thing below it*/
+        width: 80%; /*Takes up all space on modal while keeping padding*/
         background-color: white; /*Background color of the text boxes*/
         padding: 0 10px; /*How far placeholder and actual typed text are away from the sides from the textbox, also affects where the text starts*/
         border: none; /*Border of text box*/
         border-bottom:1px solid #247BA0; /*Gives us only the bottom border*/
         -webkit-border-radius:0; /*IOS likes to give random border radius so this fixes that problem*/
         border-radius:0; /*Explicitly setting border radius to 0, see above line*/
+        display:inline-block;
+      }
+      #signUpSubmit {
+        border-radius: 4px; /*Rounds button edges*/
+        color: white; /*Text of submit*/
+        background-color: #247BA0; /*Background color of button*/
+        padding: 12px 0px; /*Affects the height of the button*/
+        font-size: 19px; /*Font size of the text on the button*/
+        border:none; /*Need this or as some dumb auto border, can do this with border:0 not sure which is better practice*/
+        width: 350px; /*Takes up all space on modal while keeping padding*/
+        margin-top:85px; /*How far the submit button is away from the thing above it*/
   		}
-  		.signUpText:hover {
+      #signUpSubmit:hover {
+  		  background-color: #0A678F; /*Color of background when cursor is hovering on submit button*/
+  		}
+      .signUpText:hover {
   		  border-bottom: 2px solid #0A678F; /*Adds a border when hovering over username and password text boxes*/
   		}
-    </style>
+      .signupContent-container{
+        margin-top:40px;
+        margin-left:100px;
+      }
+      #header{
+        margin-bottom: 50px;/*How far the things below the header are from the header*/
+        font-family: helvetica, sans-serif; /*font*/
+      }
+      #header h1{
+        font-size: 35px; /*Changes the size of the header*/
+        color:#247BA0; /*Color of the header*/
+      }
 
+      /*When the screen gets to 600px these styles are activated*/
+      @media (max-width:600px){
+        .signUpContainer-grid{
+          display: grid;
+          grid-template-columns: 100%;
+          grid-gap:40px;
+        }
+        .signupContent-container{
+          margin-left: 65px;
+          margin-top: 10px;
+        }
+        #signUpSubmit{
+          width:70%;
+          margin-top: 40px;
+          margin-bottom: 10px;
+        }
+        #header{
+          width:90%;
+        }
+      }
+    </style>
   </head>
 
   <body>
+    <?php
+      include("templates/login-modal.html");
+    ?>
     <nav class="navbar navbar-default">
       <a class="navbar-brand" href="index.php">
         <img src="images/wiocLogo.png" id="wiocNavbarLogo" alt="">
       </a>
   	</nav>
-    <div id="signUpContainer">
-      <h1>Create an Account</h1>
-      <form action="includes/signup-inc.php" method="POST">
-        <input type="text" name="username" id="signUpUser" class="signUpText" placeholder="Username" required>
+    <div class="signupContent-container">
+      <div id="header">
+        <h1>Create a WIOC Account</h1>
+        <h4>If you already have a WIOC account, please <a href="#" data-toggle="modal" data-target="#login-modal">sign in here.</a><h4>
+      </div>
+      <form class="signUpContainer-grid" action="includes/signup-inc.php" method="POST">
         <input type="email" name="email" id="signUpEmail" class="signUpText" placeholder="Email" required>
+        <input type="text" name="username" id="signUpUser" class="signUpText" placeholder="Username" required>
         <input type="password" name="password" id="signUpPass" class="signUpText" placeholder="Password" required>
-        <button type="submit" name="signUpSubmitBtn" id="signUpSubmit" class="signUp">Sign up</button>
-      </form>
+        <input type="password" name="confirmpassword" id="confirmPass" class="signUpText" placeholder="Confirm Password" required>
     </div>
+      <button type="submit" name="signUpSubmitBtn" id="signUpSubmit" class="signUp center-block">Sign up</button>
+      </form>
+
+    <script>
+      var password = document.getElementById("signUpPass")
+      var confirm_password = document.getElementById("confirmPass");
+
+      function validatePassword(){
+        if(password.value != confirm_password.value) {
+          confirm_password.setCustomValidity("Passwords Don't Match");
+        } else {
+          confirm_password.setCustomValidity('');
+        }
+      }
+      password.onchange = validatePassword;
+      confirm_password.onkeyup = validatePassword;
+
+    </script>
   </body>
 </html>
