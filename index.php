@@ -84,8 +84,17 @@
 
       /*Import the login-modal and the contact-us-modal for use on the page*/
       include("templates/login-modal.html");
+      include("templates/invalid-login-modal.html");
       include("templates/contact-us-modal.html");
-
+      if(!empty($_SESSION['error'])) {
+        ?>
+        <script type="text/javascript">
+          $(document).ready(function(){
+              $('#invalid-login-modal').modal('show');
+          });
+         </script>
+        <?php
+      }
       if(isset($_SESSION['u_username'])){ //If the session variable u_username is
         include("templates/logged-in-index-navbar.php"); //The users username will be displayed in the navbar
       }
@@ -117,7 +126,9 @@
       </div>
     </div>
     <!--This block of text shows the development team's mission with the project. Currently it is filled with Lorem Ipsum place holder text.-->
-    
+    <?php
+      unset($_SESSION['error']);
+    ?>
     <script>
     $(document).ready(function(){
       $("#ourMissionBtn").click(function() {//When the Our Mission button is clicked,

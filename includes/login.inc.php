@@ -15,6 +15,7 @@
       $result = mysqli_query($conn,$sql);
       $resultCheck = mysqli_num_rows($result);
       if($resultCheck < 1){
+        $_SESSION["error"] = "Invalid username or password";
         header("Location: ../index.php?login=error1");
         exit();
       }else{
@@ -22,6 +23,7 @@
           //DE-HASHING PWD
           $hashedPwdCheck = password_verify($loginPassword, $row['users_password']);
           if($hashedPwdCheck == false){
+            $_SESSION["error"] = "Invalid username or password";
             header("Location: ../index.php?login=error2");
             exit();
           }elseif($hashedPwdCheck == true) {

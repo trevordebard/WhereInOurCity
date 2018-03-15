@@ -118,10 +118,19 @@
 
   <?php
   /*imports the login, contact-us, and question modals into the file for later use*/
-  include("templates/login-modal.html");
-  include("templates/contact-us-modal.html");
-  include("templates/question-modal.html");
-
+    include("templates/login-modal.html");
+    include("templates/invalid-login-modal.html")
+    include("templates/contact-us-modal.html");
+    include("templates/question-modal.html");
+    if(!empty($_SESSION['error'])) {
+      ?>
+      <script type="text/javascript">
+        $(document).ready(function(){
+            $('#invalid-login-modal').modal('show');
+        });
+       </script>
+      <?php
+    }
    if(isset($_SESSION['u_username'])){ //if the session variable u_username is set
      include("templates/logged-in-cityhome-navbar.php"); //show the users username in the navbar
    }
